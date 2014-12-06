@@ -7,4 +7,8 @@ public class Message implements Serializable {
 	public int port;
 	public String type;
 	public Object content;
+	
+	public String toString(){
+		return this.content.toString();
+	}
 }

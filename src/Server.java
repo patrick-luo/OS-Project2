@@ -20,23 +20,25 @@ public abstract class Server {
 	protected int poolSize;
 	protected ExecutorService threadPool;
 	protected ServerSocket serverSocket;
+	protected String serverType; // either "helper" or "google"
+
 	
 	public Server(int poolSize) throws IOException {
 		// initialize all fields
 		ip = InetAddress.getLocalHost();
-		Random r = new Random();
-		port = r.nextInt(20000) + 5000;
-		serverSocket = new ServerSocket(port);
+		serverSocket = new ServerSocket(0);
+		this.port = serverSocket.getLocalPort();
+		Debug.println("Server socket port = " + this.port);
 		this.poolSize = poolSize;
 		threadPool = Executors.newFixedThreadPool(this.poolSize);
 	}
 	/**
 	 * register itself to NameServer and return the (IP, Port) of NameServer
 	 */
-	public IPPort register(String type) throws UnknownHostException, IOException {
+	public IPPort register(String content) throws UnknownHostException, IOException {
 		IPPort nameServer = getNameServer();
-		Socket connection = new Socket(nameServer.ip, nameServer.port);
-		RegisterDude dude = new RegisterDude(connection, type);
+		Socket clientSocket = new Socket(nameServer.ip, nameServer.port);
+		RegisterDude dude = new RegisterDude(clientSocket, content);
 		threadPool.submit(dude);
 		return nameServer;
 	}
@@ -54,11 +56,10 @@ public abstract class Server {
 	}
 
 	private class RegisterDude extends AbstractDude {
-		private String serverType; // either "helper" or "google"
-
-		public RegisterDude(Socket s, String type) throws IOException {
+		
+		public RegisterDude(Socket s, String content) throws IOException {
 			super(s);
-			serverType = type;
+			serverType = content;
 		}
 
 		public void run() {
@@ -66,7 +67,10 @@ public abstract class Server {
 			Message registerInfo = generateMsg("register", serverType);
 			try {
 				send(registerInfo);
-				closeSocket();
+				Message replyMsgFromNS = receive();
+				String replyStr = replyMsgFromNS.toString();
+				Debug.println(serverType + ": reply from the NS" + replyStr);
+				closeSocket();//closeSocket right after sending the register request
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

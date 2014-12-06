@@ -15,3 +15,7 @@
 /Server.class
 /ThreadTest$Dude.class
 /ThreadTest.class
+/GoogleServer$GoogleWorker.class
+/Debug.class
+/NameServer$NameWorker.class
+/Client.class

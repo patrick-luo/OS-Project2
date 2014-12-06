@@ -8,17 +8,22 @@ import java.util.HashMap;
 
 
 public class NameServer extends Server {
-	private HashMap<IPPort, String> helperList;
-	private IPPort google;
+	/** the address of the helper
+	 * Key: helper address, value: helper type: ready or not ready
+	 * */
+	private HashMap<IPPort, Boolean> helperList;
+	/** the address of the google server*/
+	private IPPort googleServerAddress;
 	
 	public NameServer() throws IOException {
 		// initialize all fields
 		super(10);
-		helperList = new HashMap<IPPort, String>();
-		google = new IPPort();
+		helperList = new HashMap<IPPort, Boolean>();
+		googleServerAddress = null;
 		
-		// then do something
+		//post its address
 		Announce();
+		//continue receiving and dispatching
 		runServer();
 	}
 	
@@ -34,11 +39,11 @@ public class NameServer extends Server {
 
 	@Override
 	public void runServer() {
-		// TODO Auto-generated method stub
+		Debug.println("Nameserver: 'starts running'");
 		try {
 			while (true) {
 				try { // accept a new connection from someone
-					threadPool.submit(new Dude(serverSocket.accept()));
+					threadPool.submit(new NameWorker(serverSocket.accept()));
 				}
 				catch (Exception e) {
 					System.out.println("Problems with NameServer connection...terminating");
@@ -52,16 +57,18 @@ public class NameServer extends Server {
 		}
 	}
 	
-	private class Dude extends AbstractDude {
+	private class NameWorker extends AbstractDude {
 
-		public Dude(Socket s) throws IOException {
-			super(s);
+		public NameWorker(Socket clientSocket) throws IOException {
+			super(clientSocket);
 		}
 		
 		public void run() {
 			try {
 				Message receivedMsg = receive();
 				process(receivedMsg);
+				Message replyMsg = generateMsg("reply", "register success");
+				this.send(replyMsg);
 				closeSocket();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -103,10 +110,13 @@ public class NameServer extends Server {
 			String type = "query_result";
 			Message result = null;
 			
-			if (msg.equals("google")) { // query the ip & port of google server
-				result = generateMsg(type, google);
+			if (msg.toString().equals("google")) { // query the ip & port of google server
+				if(googleServerAddress == null) 
+					result = generateMsg(type, "no google server available yet");
+				else
+					result = generateMsg(type, googleServerAddress);
 			}
-			else if (msg.equals("helper")) {
+			else if (msg.toString().equals("helper")) {
 				
 			}
 			send(result);
@@ -117,15 +127,15 @@ public class NameServer extends Server {
 			IPPort pair = new IPPort();
 			pair.ip = msg.ip;
 			pair.port = msg.port;
-			if(msg.content.equals("helper"))
-				helperList.put(pair, "ready");
-			else if (msg.content.equals("google"))
-				google = pair;
+			if(msg.toString().equals("helper"))
+				helperList.put(pair, true);
+			else if (msg.toString().equals("google"))
+				googleServerAddress = pair;
 			else {
 				System.err.println("Please specify if you are helper or google to register!");
 				return;
 			}
-			System.out.print("Register success!");
+			Debug.println("NameServer: Register success! from " + pair.toString());
 		}
 	}
 	

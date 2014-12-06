@@ -6,6 +6,7 @@ import java.net.Socket;
 
 
 public abstract class AbstractDude extends Thread implements Receiver, Sender {
+		/**client socket used for data communication*/
 		protected Socket dudeSocket;
 		protected ObjectInputStream reader;
 		protected ObjectOutputStream writer;
