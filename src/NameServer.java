@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -34,7 +35,7 @@ public class NameServer extends Server {
 		w.write("\r\n");
 		w.write(Integer.toString(port));
 		w.close();
-		System.out.println("Announcement.txt has been created.");
+		Debug.println("Announcement.txt has been created.");
 	}
 
 	@Override
@@ -117,14 +118,18 @@ public class NameServer extends Server {
 			String type = "query_result";
 			Message result = null;
 			
-			if (msg.toString().equals("google")) { // query the ip & port of google server
+			if (msg.content.equals("google")) { // query the ip & port of google server
 				if(googleServerAddress == null) 
 					result = generateMsg(type, "no google server available yet");
 				else
 					result = generateMsg(type, googleServerAddress);
 			}
-			else if (msg.toString().equals("helper")) {
-				
+			else if (msg.content.equals("helper")) {
+				ArrayList<IPPort> helpers = new ArrayList<IPPort>();
+				for (IPPort key : helperList.keySet())
+					helpers.add(key);
+				result = generateMsg(type, helpers);
+				Debug.println("Returning " + helpers.size() + " helpers.");
 			}
 			send(result);
 		}

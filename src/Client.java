@@ -57,15 +57,15 @@ public class Client implements Sender, Receiver {
 				+ replyMsg.toString());
 		
 		client.closeSocket();
-		client.connectToGoogleServer();
-		Message requestMsg2 = client.generateMsg(requestType2, requestContent2);
-		client.send(requestMsg2);
-		Debug.println("client: sends " + requestType2
-				+ " request to googleServer");
-
-		Message replyMsg2 = client.receive();
-		Debug.println("client: receives msg from google server[searching finished]"
-				+ replyMsg2.toString());
+//		client.connectToGoogleServer();
+//		Message requestMsg2 = client.generateMsg(requestType2, requestContent2);
+//		client.send(requestMsg2);
+//		Debug.println("client: sends " + requestType2
+//				+ " request to googleServer");
+//
+//		Message replyMsg2 = client.receive();
+//		Debug.println("client: receives msg from google server[searching finished]"
+//				+ replyMsg2.toString());
 
 	}
 

@@ -69,7 +69,7 @@ public abstract class Server {
 				send(registerInfo);
 				Message replyMsgFromNS = receive();
 				String replyStr = replyMsgFromNS.toString();
-				Debug.println(serverType + ": reply from the NS" + replyStr);
+				Debug.println(serverType + ": reply from the NS: " + replyStr);
 				closeSocket();//closeSocket right after sending the register request
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

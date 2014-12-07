@@ -2,6 +2,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 public class GoogleServer extends Server {
 	private IPPort nameServer;
@@ -21,12 +23,13 @@ public class GoogleServer extends Server {
 	public void runServer() {
 		Debug.println("Google secretary: 'starts running'");
 		try {
+			Random rand = new Random();
 			while (true) {
 				try { // accept a new connection from someone
-					threadPool.submit(new GoogleWorker(serverSocket.accept()));
+					threadPool.submit(new GoogleWorker(serverSocket.accept(), rand.nextInt()));
 				}
 				catch (Exception e) {
-					System.out.println(" threadPool.submit(new GoogleWorker(serverSocket.accept()));");
+					System.err.println(" threadPool.submit(new GoogleWorker(serverSocket.accept()));");
 					System.exit(0);
 				}
 			}
@@ -39,36 +42,51 @@ public class GoogleServer extends Server {
 
 	private class GoogleWorker extends AbstractDude {
 		
+		Message request;
+		int xid;
 		private Communicator chi;
+		private ServerSocket siqi;
+		ArrayList<String[]> taskList;
+		ArrayList<IPPort> helperList;
+		ArrayList<Object> replyList;
 		
 		private class Communicator extends AbstractDude {
 
 			public Communicator(Socket s) throws IOException {
 				super(s);
-				chi = new Communicator(null);
 			}
 
 			@Override
 			public Message generateMsg(String type, Object content) {
-				// TODO Auto-generated method stub
-				return null;
+				Message m = new Message();
+				m.xid = xid;
+				m.ip = ip;
+				m.port = port;
+				m.type = type;
+				m.content = content;
+				return m;
 			}
 
 			@Override
-			public Object process(Message msg) {
-				// TODO Auto-generated method stub
-				return null;
-			}
+			public Object process(Message msg) {return null;}
 			
 		}
 
-		public GoogleWorker(Socket clientSocket) throws IOException {
+		public GoogleWorker(Socket clientSocket, int xid) throws IOException {
 			super(clientSocket);
+			request = null;
+			this.xid = xid;
+			chi = null;
+			siqi = new ServerSocket(0);
+			taskList = null;
+			helperList = null;
+			replyList = null;
 		}
 		
-		public void run(){
+		public void run() {
 			try {
-				Message request = receive();
+				request = receive();
+				Debug.println("Successfully receive a requst from one client");
 				process(request);
 				closeSocket();
 			} catch (IOException e) {
@@ -91,42 +109,88 @@ public class GoogleServer extends Server {
 		 */
 		@Override
 		public Object process(Message request) {
-			ArrayList<IPPort> helperList = getHelperList();
-			ServerSocket siqi = new ServerSocket(0);
-			sendTaskToHelper(helperList);
-			receiveReplyFromHelper();
-			
-			
-			
-			
-			
-			
+			try {
+				getHelperList();
+//				splitTask();
+//				sendTaskToHelper();
+//				receiveReplyFromHelper();
+				sendReplyToClient();
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		private void sendReplyToClient() throws IOException {
 			if(request.type.equals("indexing")){
-				//TODO assume indexing finished immediately
-				Debug.println("google server: receive indexing request");
 				Message reply = generateMsg("reply", "indexing finished");
-				try {
-					send(reply);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				send(reply);
 			}
 			else if(request.type.equals("searching")){
-				Debug.println("google server: receive searching request");
 				Message reply = generateMsg("reply", "searching finished");
-				try {
-					send(reply);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				send(reply);
 			}
 			else {
 				System.err.println("Please specify if you are searching or indexing");
-				return null;
 			}
-			return null;
+		}
+
+		private void receiveReplyFromHelper() throws IOException {
+			for(int i = 0; i < helperList.size(); i ++) {
+				chi = new Communicator(siqi.accept());
+				Message reply = chi.receive();
+				replyList.add(reply.content);
+				chi.closeSocket();
+			}
+		}
+
+		private void splitTask() {
+			String content = (String) request.content;
+			if (request.type.equals("indexing")) {
+				String fileName = content;
+				String start = Long.toString(Long.MAX_VALUE);
+				String end = Long.toString(Long.MIN_VALUE);
+				String[] task = new String[3];
+				task[0] = fileName;
+				task[1] = start;
+				task[2] = end;
+				taskList.add(task);
+			}
+			else if (request.type.equals("searching")) {
+				// Assumption: keywords are split by ';'
+				String[] wordList = content.split(";");
+				int numWord = wordList.length / helperList.size();
+			}
+			else {
+				// error information
+			}
+		}
+
+		private void sendTaskToHelper() throws IOException {
+			for (int i = 0; i < helperList.size(); i ++) {
+				/**
+				 * for each task message, its ip & port indicate siqi's ip & port;
+				 * xid is transcation ID;
+				 * type is "indexing" or "searching";
+				 * content is a string array.
+				 */
+				chi = new Communicator(new Socket(helperList.get(i).ip, helperList.get(i).port));
+				Message task = chi.generateMsg(request.type, taskList.get(i));
+				task.port = siqi.getLocalPort(); // redirect port of receiving result to be siqi's port
+				chi.send(task);
+				chi.closeSocket();
+			}
+		}
+
+		private void getHelperList() throws IOException {
+			chi = new Communicator(new Socket(nameServer.ip, nameServer.port));
+			Message queryToNS = chi.generateMsg("query", "helper");
+			chi.send(queryToNS);
+			Message replyFromNS = chi.receive();
+			chi.closeSocket();
+			helperList = (ArrayList<IPPort>) replyFromNS.content;
+			Debug.println("Get " + helperList.size() + " helpers from NS.");
 		}
 		
 
