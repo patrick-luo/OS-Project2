@@ -20,3 +20,4 @@
 /NameServer$NameWorker.class
 /Client.class
 /GoogleServer$GoogleWorker$Communicator.class
+/GoogleFileManager.class
