@@ -40,20 +40,20 @@ public class NameServer extends Server {
 
 	@Override
 	public void runServer() {
-		Debug.println("Nameserver: 'starts running'");
+		Debug.println("Nameserver secretary starts running");
 		try {
 			while (true) {
 				try { // accept a new connection from someone
 					threadPool.submit(new NameWorker(serverSocket.accept()));
 				}
 				catch (Exception e) {
-					System.out.println("Problems with NameServer connection...terminating");
+					System.err.println("Problems with NameServer connection...terminating");
 					System.exit(0);
 				}
 			}
 		}
 		finally {
-			System.out.println("NameServer shutting down.");
+			System.err.println("NameServer shutting down.");
 			System.exit(0);
 		}
 	}

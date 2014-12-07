@@ -21,7 +21,7 @@ public class GoogleServer extends Server {
 	 * google server's main thread is a secretary
 	 */
 	public void runServer() {
-		Debug.println("Google secretary: 'starts running'");
+		Debug.println("Google secretary starts running");
 		try {
 			Random rand = new Random();
 			while (true) {
@@ -29,13 +29,13 @@ public class GoogleServer extends Server {
 					threadPool.submit(new GoogleWorker(serverSocket.accept(), rand.nextInt()));
 				}
 				catch (Exception e) {
-					System.err.println(" threadPool.submit(new GoogleWorker(serverSocket.accept()));");
+					System.err.println("Problem with google server connection...terminating.");
 					System.exit(0);
 				}
 			}
 		}
 		finally {
-			System.out.println("google server shutting down.");
+			System.err.println("google server shutting down.");
 			System.exit(0);
 		}
 	}
@@ -111,9 +111,9 @@ public class GoogleServer extends Server {
 		public Object process(Message request) {
 			try {
 				getHelperList();
-//				splitTask();
-//				sendTaskToHelper();
-//				receiveReplyFromHelper();
+				splitTask();
+				sendTaskToHelper();
+				receiveReplyFromHelper();
 				sendReplyToClient();
 			}
 			catch (IOException e) {
@@ -148,7 +148,12 @@ public class GoogleServer extends Server {
 		private void splitTask() {
 			String content = (String) request.content;
 			if (request.type.equals("indexing")) {
-				String fileName = content;
+				String filePath = content;
+				GoogleFileManager gfm = new GoogleFileManager(filePath);
+				long lengthOfFile = gfm.length();
+				for (int i = 0; i < helperList.size(); i ++)
+				
+				
 				String start = Long.toString(Long.MAX_VALUE);
 				String end = Long.toString(Long.MIN_VALUE);
 				String[] task = new String[3];
@@ -160,7 +165,26 @@ public class GoogleServer extends Server {
 			else if (request.type.equals("searching")) {
 				// Assumption: keywords are split by ';'
 				String[] wordList = content.split(";");
-				int numWord = wordList.length / helperList.size();
+				
+				if (helperList.size() == 1)
+					taskList.add(wordList);
+				else {
+					int cnt = 0;
+					int numWord = (int)Math.ceil(wordList.length * 1.0 / helperList.size());
+					for (int i = 0; i < helperList.size(); i ++) {
+						String[] task;
+						if (i != helperList.size() - 2) 
+							task = new String[numWord];
+						else
+							task = new String[wordList.length - numWord * (helperList.size() - 1)];
+		
+						for(int j = 0; j < task.length; j ++) {
+							task[j] = wordList[cnt ++];
+						}
+						taskList.add(task);
+					}
+				}
+				
 			}
 			else {
 				// error information
