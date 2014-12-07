@@ -12,13 +12,18 @@ public abstract class AbstractDude extends Thread implements Receiver, Sender {
 		protected ObjectOutputStream writer;
 		
 		public AbstractDude (Socket s) throws IOException {
-		//	System.out.println("Reigster dude starts...");
+			if (s != null)
+				initIO(s);
+		}
+		
+		public void initIO(Socket s) throws IOException {
+			// TODO Auto-generated method stub
 			dudeSocket = s;
 			writer = new ObjectOutputStream(dudeSocket.getOutputStream());
 			writer.flush();
 			reader = new ObjectInputStream(dudeSocket.getInputStream());
 		}
-		
+
 		public void closeSocket() throws IOException {
 			reader.close();
 			writer.close();

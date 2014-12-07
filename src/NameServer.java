@@ -67,9 +67,8 @@ public class NameServer extends Server {
 			try {
 				Message receivedMsg = receive();
 				process(receivedMsg);
-				Message replyMsg = generateMsg("reply", "register success");
-				this.send(replyMsg);
 				closeSocket();
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -91,6 +90,14 @@ public class NameServer extends Server {
 			// TODO Auto-generated method stub
 			if(msg.type.equals("register")) {
 				register(msg);
+				Message replyMsg = generateMsg("reply", "register success");
+				try {
+					this.send(replyMsg);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}
 			else if (msg.type.equals("query")) {
 				try {

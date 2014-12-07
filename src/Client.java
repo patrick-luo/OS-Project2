@@ -8,8 +8,9 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class Client implements Sender, Receiver{
+public class Client implements Sender, Receiver {
 	private IPPort nameServer;
+	private IPPort googleServer;
 	private InetAddress ip;
 	private int port;
 	private Socket clientSocket;
@@ -32,15 +33,58 @@ public class Client implements Sender, Receiver{
 		Message request = client.generateMsg("query", "google");
 		client.send(request);
 		Debug.println("client: sends query for location of googleServer");
-		String replyMsgFromNS = client.receive().toString();
-		Debug.println("client: receives reply from NS " + replyMsgFromNS);
-		//send request to the server
+		client.googleServer = (IPPort) client.receive().content;
+		Debug.println("client: receives reply from NS "
+				+ client.googleServer.toString());
+
+		// send request to the server
+		client.closeSocket();
+		// bind socket to google server
+		client.connectToGoogleServer();
+
 		String documentPath = "D1";
 		String requestType = "indexing";
+		String requestType2 = "searching";
 		String requestContent = documentPath;
+		String requestContent2 = "I love you";
 		Message requestMsg = client.generateMsg(requestType, requestContent);
 		client.send(requestMsg);
-		Debug.println("client: sends " + requestType + " request to googleServer");
+		Debug.println("client: sends " + requestType
+				+ " request to googleServer");
+
+		Message replyMsg = client.receive();
+		Debug.println("client: receives msg from google server[indexing finished]"
+				+ replyMsg.toString());
+		
+		client.closeSocket();
+		client.connectToGoogleServer();
+		Message requestMsg2 = client.generateMsg(requestType2, requestContent2);
+		client.send(requestMsg2);
+		Debug.println("client: sends " + requestType2
+				+ " request to googleServer");
+
+		Message replyMsg2 = client.receive();
+		Debug.println("client: receives msg from google server[searching finished]"
+				+ replyMsg2.toString());
+
+	}
+
+	private void closeSocket() throws IOException {
+		reader.close();
+		writer.close();
+		clientSocket.close();
+	}
+
+	private void connectToGoogleServer() {
+		try {
+			clientSocket = new Socket(googleServer.ip, googleServer.port);
+			writer = new ObjectOutputStream(clientSocket.getOutputStream());
+			writer.flush();
+			reader = new ObjectInputStream(clientSocket.getInputStream());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private IPPort getNameServer() throws UnknownHostException, IOException {
@@ -68,7 +112,7 @@ public class Client implements Sender, Receiver{
 	@Override
 	public void send(Message msg) throws IOException {
 		writer.writeObject(msg);
-		writer.flush();		
+		writer.flush();
 	}
 
 	@Override
