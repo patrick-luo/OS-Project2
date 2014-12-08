@@ -49,9 +49,9 @@ public class GoogleFileManager {
 	 * @return
 	 * @throws IOException
 	 */
-	public static ConcurrentHashMap<String, ConcurrentHashMap<String, String>> mapIndexing(
-			String[] task) throws IOException {
-		ConcurrentHashMap<String, ConcurrentHashMap<String, String>> invertedIndex = new ConcurrentHashMap<String, ConcurrentHashMap<String, String>>();
+	public static ConcurrentHashMap<String, String> mapIndexing(String[] task)
+			throws IOException {
+		ConcurrentHashMap<String, String> oneLevelIndex = new ConcurrentHashMap<String, String>();
 
 		String fileName = task[0];
 		long begin = Long.parseLong(task[1]);
@@ -61,16 +61,14 @@ public class GoogleFileManager {
 			String regexp = "[\\s,;\\n\\t]+";
 			String[] tokens = line.split(regexp);
 			for (int i = 0; i < tokens.length; i++) {
-				String token = tokens[i];
+				String token = tokens[i].toLowerCase();
 				if (token.length() < 2)
 					continue;
-				String fileKey = token.substring(0, 2);
-				ConcurrentHashMap<String, String> oneLevelIndex;
-				if (!invertedIndex.containsKey(fileKey)) {
-					invertedIndex.put(fileKey,
-							new ConcurrentHashMap<String, String>());
-				}
-				oneLevelIndex = invertedIndex.get(fileKey);
+				// String fileKey = token.substring(0, 2);
+				// if (!invertedIndex.containsKey(fileKey)) {
+				// invertedIndex.put(fileKey,
+				// new ConcurrentHashMap<String, String>());
+				// }
 				String pair;
 				if (!oneLevelIndex.containsKey(token)) {
 					pair = fileName + ":" + 0;
@@ -79,11 +77,15 @@ public class GoogleFileManager {
 				int cnt = Integer.parseInt(pair.split(":")[1]);
 				pair = fileName + ":" + (cnt + 1);
 				oneLevelIndex.put(token, pair);
-
 			}
 		}
 
-		return invertedIndex;
+		return oneLevelIndex;
+	}
+
+	public static List<ConcurrentHashMap<String, String>> splitIndexing(
+			ConcurrentHashMap<String, String> invertedIndex, int reducerNum) {
+		return null;
 	}
 
 	public static ConcurrentHashMap<String, List<String>> mapSearching(
@@ -111,29 +113,30 @@ public class GoogleFileManager {
 	 * @throws IOException
 	 */
 	public static void reduceIndexing(
-			List<ConcurrentHashMap<String, ConcurrentHashMap<String, String>>> invertedIndices)
+			List<ConcurrentHashMap<String, String>> invertedIndicesLevelOne)
 			throws IOException {
-		for (ConcurrentHashMap<String, ConcurrentHashMap<String, String>> invertedIndex : invertedIndices) {// for
-																											// each
-																											// two
-																											// level
-																											// partial
-																											// inverted
-																											// indices
-			for (String fileName : invertedIndex.keySet()) {
 
-				// read all stuffs from a file into a one level hash table
-				String filePath = fileName.charAt(0) + "/" + fileName;
-				ConcurrentHashMap<String, List<String>> diskIndex = reducerReadInvertedIndexFromFile(filePath);
-				ConcurrentHashMap<String, String> memIndex = invertedIndex
-						.get(fileName);
-				// merge the one level hash table with the partial index
-				reducerMergeIndices(diskIndex, memIndex);
-				// write the merged result(one level hash table) into the disk
-				// file
-				reducerWriteInvertedIndexToFile(filePath, diskIndex);
-			}
+		ConcurrentHashMap<String, ConcurrentHashMap<String, String>> invertedIndicesLevelTwo = merge(invertedIndicesLevelOne);
+		// each
+		for (String fileName : invertedIndicesLevelTwo.keySet()) {
+
+			// read all stuffs from a file into a one level hash table
+			String filePath = fileName.charAt(0) + "/" + fileName;
+			ConcurrentHashMap<String, List<String>> diskIndex = reducerReadInvertedIndexFromFile(filePath);
+			ConcurrentHashMap<String, String> memIndex = invertedIndicesLevelTwo
+					.get(fileName);
+			// merge the one level hash table with the partial index
+			reducerMergeIndices(diskIndex, memIndex);
+			// write the merged result(one level hash table) into the disk
+			// file
+			reducerWriteInvertedIndexToFile(filePath, diskIndex);
 		}
+	}
+
+	private static ConcurrentHashMap<String, ConcurrentHashMap<String, String>> merge(
+			List<ConcurrentHashMap<String, String>> invertedIndicesLevelOne) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public static ConcurrentHashMap<String, List<String>> reduceSearching(
@@ -142,8 +145,8 @@ public class GoogleFileManager {
 		return null;
 		// sort
 	}
-	
-	public static List<String[]> indexingSplit(String filePath, int partNum){
+
+	public static List<String[]> indexingSplit(String filePath, int partNum) {
 		return null;
 	}
 
@@ -236,9 +239,9 @@ public class GoogleFileManager {
 			String[] tokens = line.split("\t");
 			List<String> list = new ArrayList<String>();
 			for (int i = 1; i < tokens.length; i++) {
-				list.add(tokens[i]);
+				list.add(tokens[i].toLowerCase());
 			}
-			invertedIndex.put(tokens[0], list);
+			invertedIndex.put(tokens[0].toLowerCase(), list);
 		}
 		gm.close();
 		return invertedIndex;
