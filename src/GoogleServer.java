@@ -80,7 +80,7 @@ public class GoogleServer extends Server {
 			siqi = new ServerSocket(0);
 			taskList = null;
 			helperList = null;
-			replyList = null;
+			replyList = new ArrayList<Object>();
 		}
 		
 		public void run() {
@@ -139,13 +139,18 @@ public class GoogleServer extends Server {
 		}
 
 		private void receiveReplyFromHelper() throws IOException {
+		//	System.out.println("siqi port: " + siqi.getLocalPort());
 			for(int i = 0; i < helperList.size(); i ++) {
 				chi = new Communicator(siqi.accept());
+			//	System.out.println("Here 2");
 				Message reply = chi.receive();
+			//	System.out.println("Here 3");
 				replyList.add(reply.content);
+			//	System.out.println("Here 4");
 				chi.closeSocket();
 				Debug.println("Done receiving result from helper #" + i + ", xid = " + xid);
 			}
+		//	System.out.println("Here");
 		}
 
 		private void splitTask() {

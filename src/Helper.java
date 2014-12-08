@@ -111,12 +111,17 @@ public class Helper extends Server {
 					reduceTasks.add((ConcurrentHashMap<String, String>)m.content);
 				}
 				GoogleFileManager.reduceIndexing(reduceTasks);
+				Debug.println("Done reducing, xid = " + task.xid);
+				
+				// send ack to google here
+				initIO(new Socket(task.ip, task.port));
+			//	System.out.println("siqi port: " + task.port);
+				Message indexReply = generateMsg("index_reply", "success");
+				send(indexReply);
+				Debug.println("Send ACK to google server.");
+				closeSocket();
 			}
-			// send ack to google here
-			initIO(new Socket(task.ip, task.port));
-			Message indexReply = generateMsg("index_reply", "success");
-			send(indexReply);
-			closeSocket();
+			
 		}
 
 		/**
@@ -127,6 +132,7 @@ public class Helper extends Server {
 		 * @throws IOException 
 		 */
 		private void doIndexMap(Message task) throws IOException {
+			Debug.println("Got a mapping task from google server, xid = " + task.xid);
 			synchronized (middleResult) {
 				middleResult.put(task.xid, new ArrayList<Message>());
 			}
@@ -136,6 +142,7 @@ public class Helper extends Server {
 			List<ConcurrentHashMap<String, String>> copiesToSend = 
 					GoogleFileManager.indexingSplit(indexingMiddleResult, helperList.size());
 			sendMiddleResult(task, helperList, copiesToSend);
+			Debug.println("Done mapping, xid = " + task.xid);
 		}
 
 		private void sendMiddleResult(
@@ -175,6 +182,7 @@ public class Helper extends Server {
 			Message searchReply = generateMsg("search_result", result);
 			send(searchReply);
 			closeSocket();
+			Debug.println("Done searching, xid = " + task.xid);
 		}
 		
 	}

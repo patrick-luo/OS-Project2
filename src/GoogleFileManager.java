@@ -159,8 +159,8 @@ public class GoogleFileManager {
 			throws IOException {
 
 		ConcurrentHashMap<String, ConcurrentHashMap<String, String>> invertedIndicesLevelTwo = merge(invertedIndicesLevelOne);
-		for(String filePath: invertedIndicesLevelTwo.keySet())
-			Debug.println(filePath);
+//		for(String filePath: invertedIndicesLevelTwo.keySet())
+//			Debug.println(filePath);
 		// each
 		for (String filePath : invertedIndicesLevelTwo.keySet()) {
 
