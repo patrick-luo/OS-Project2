@@ -97,18 +97,18 @@ public class Helper extends Server {
 		private void doIndexReduce(Message task) throws IOException {
 			ArrayList<Message> reduceList = null;
 			synchronized (middleResult) {
-				ArrayList<Message> middle = middleResult.get(task.xid);
-				middle.add(task);
+				ArrayList<Message> middleList = middleResult.get(task.xid);
+				middleList.add(task);
 				int totalNumReduces = Integer.parseInt(task.type.split(":")[1]);
-				if (totalNumReduces == middle.size()) 
+				if (totalNumReduces == middleList.size()) 
 					reduceList = middleResult.remove(task.xid);
 			}
 			if (reduceList != null) {
 				// do reducing here
-				List<ConcurrentHashMap<String, ConcurrentHashMap<String, String>>> reduceTasks
-				 = new ArrayList<ConcurrentHashMap<String,ConcurrentHashMap<String,String>>>();
+				List<ConcurrentHashMap<String, String>> reduceTasks = 
+						new ArrayList<ConcurrentHashMap<String,String>>();
 				for (Message m : reduceList) {
-					reduceTasks.add((ConcurrentHashMap<String, ConcurrentHashMap<String, String>>)m.content);
+					reduceTasks.add((ConcurrentHashMap<String, String>)m.content);
 				}
 				GoogleFileManager.reduceIndexing(reduceTasks);
 			}
@@ -128,27 +128,22 @@ public class Helper extends Server {
 		 */
 		private void doIndexMap(Message task) throws IOException {
 			synchronized (middleResult) {
-				ArrayList<Message> middle = new ArrayList<Message>();
-				middleResult.put(task.xid, middle);
+				middleResult.put(task.xid, new ArrayList<Message>());
 			}
-			ConcurrentHashMap<String, ConcurrentHashMap<String, String>> indexingMiddleResult = GoogleFileManager.mapIndexing((String[])task.content);
+			ConcurrentHashMap<String, String> indexingMiddleResult = 
+					GoogleFileManager.mapIndexing((String[])task.content);
 			ArrayList<IPPort> helperList = getHelperList();
-			List<ConcurrentHashMap<String, ConcurrentHashMap<String, String>>> copiesToSend = splitMiddleResult(indexingMiddleResult, helperList.size());
+			List<ConcurrentHashMap<String, String>> copiesToSend = 
+					GoogleFileManager.indexingSplit(indexingMiddleResult, helperList.size());
 			sendMiddleResult(task, helperList, copiesToSend);
-		}
-
-		private List<ConcurrentHashMap<String, ConcurrentHashMap<String, String>>> splitMiddleResult(
-				ConcurrentHashMap<String, ConcurrentHashMap<String, String>> indexingMiddleResult,
-				int size) { // criteria for splitting is to use 26 letters over numberOfHelpers
-			return null;
 		}
 
 		private void sendMiddleResult(
 				Message task, ArrayList<IPPort> helperList,
-				List<ConcurrentHashMap<String,ConcurrentHashMap<String,String>>> copiesToSend) throws IOException {
+				List<ConcurrentHashMap<String,String>> copiesToSend) throws IOException {
 			for (int i = 0; i < helperList.size(); i ++) {
 				IPPort helper = helperList.get(i);
-				ConcurrentHashMap<String,ConcurrentHashMap<String,String>> copy = copiesToSend.get(i);
+				ConcurrentHashMap<String,String> copy = copiesToSend.get(i);
 				initIO(new Socket(helper.ip, helper.port));
 				Message MsgToEachHelper = generateMsg("indexing_reducing:" + helperList.size(), copy);
 				MsgToEachHelper.xid = task.xid;

@@ -149,7 +149,7 @@ public class GoogleServer extends Server {
 			String content = (String) request.content;
 			if (request.type.equals("indexing")) {
 				String filePath = content;
-				taskList = (ArrayList<String[]>) GoogleFileManager.indexingSplit(filePath, helperList.size());
+				taskList = (ArrayList<String[]>) GoogleFileManager.splitFile(filePath, helperList.size());
 			}
 			else if (request.type.equals("searching")) {
 				// Assumption: keywords are split by ';'
@@ -200,6 +200,7 @@ public class GoogleServer extends Server {
 				task.port = siqi.getLocalPort(); // redirect port of receiving result to be siqi's port
 				chi.send(task);
 				chi.closeSocket();
+				Debug.println("Sent task to helper #" + i);
 			}
 		}
 

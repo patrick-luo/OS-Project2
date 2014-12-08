@@ -83,8 +83,7 @@ public class GoogleFileManager {
 		return oneLevelIndex;
 	}
 
-	public static List<ConcurrentHashMap<String, String>> splitIndexing(
-			ConcurrentHashMap<String, String> invertedIndex, int reducerNum) {
+	public static List<String[]> splitFile(String filePath, int mapperNum) {
 		return null;
 	}
 
@@ -135,7 +134,31 @@ public class GoogleFileManager {
 
 	private static ConcurrentHashMap<String, ConcurrentHashMap<String, String>> merge(
 			List<ConcurrentHashMap<String, String>> invertedIndicesLevelOne) {
-		// TODO Auto-generated method stub
+		ConcurrentHashMap<String, ConcurrentHashMap<String, String>> twoLevelMap = 
+				new ConcurrentHashMap<String, ConcurrentHashMap<String,String>>();
+		for (ConcurrentHashMap<String, String> oneLevelMap : invertedIndicesLevelOne) {
+			for (String word : oneLevelMap.keySet()) {
+				if (word.equals("###"))
+					break;
+				String filekey = word.substring(0, 2);
+				if (!twoLevelMap.containsKey(filekey)) {
+					twoLevelMap.put(filekey, new ConcurrentHashMap<String, String>());
+					twoLevelMap.get(filekey).put(word, oneLevelMap.get(word));
+				}
+				else {
+					if (!twoLevelMap.get(filekey).containsKey(word)) {
+						twoLevelMap.get(filekey).put(word, oneLevelMap.get(word));
+					}
+					else {
+						int cnt = Integer.parseInt(twoLevelMap.get(filekey).get(word).split(":")[1]);
+						String[] oldPair = oneLevelMap.get(word).split(":");
+						cnt += Integer.parseInt(oldPair[1]);
+						String updatedPair = oldPair[0] + ":" + cnt;
+						twoLevelMap.get(filekey).put(word, updatedPair);
+					}
+				}
+			}
+		}
 		return null;
 	}
 
@@ -146,8 +169,21 @@ public class GoogleFileManager {
 		// sort
 	}
 
-	public static List<String[]> indexingSplit(String filePath, int partNum) {
-		return null;
+	public static List<ConcurrentHashMap<String, String>> indexingSplit(
+			ConcurrentHashMap<String, String> bigMap, int partNum) {
+		ArrayList<ConcurrentHashMap<String, String>> smallMapList = new ArrayList<ConcurrentHashMap<String,String>>();
+		for (int i = 0; i < partNum; i ++) {
+			smallMapList.add(new ConcurrentHashMap<String, String>());
+		}
+		for (String word : bigMap.keySet()) {
+			int index = (word.charAt(0) - 'a') % partNum;
+			smallMapList.get(index).put(word, bigMap.get(word));
+		}
+		for (int i = 0; i < partNum; i ++) {
+			if (smallMapList.get(i).isEmpty())
+				smallMapList.get(i).put("###", "qiaojie:-1");
+		}
+		return smallMapList;
 	}
 
 	private void close() throws IOException {
