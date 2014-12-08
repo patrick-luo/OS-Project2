@@ -1,0 +1,328 @@
+fronted	dict.txt:1
+franking	dict.txt:1
+freons	dict.txt:1
+fresco	dict.txt:1
+freewill	bible.txt:17	bible.txt:17	bible.txt:34
+frontal	dict.txt:1
+frogmen	dict.txt:1
+fractal	dict.txt:1
+frosts	dict.txt:1
+fragile	dict.txt:1
+friable	dict.txt:1
+frighteningly	dict.txt:1
+fragment	dict.txt:1
+frights	dict.txt:1
+frogmarched	dict.txt:1
+friendless	dict.txt:1
+freshen	dict.txt:1
+frothiest	dict.txt:1
+frontage	dict.txt:1
+freighter	dict.txt:1
+fritter	dict.txt:1
+frightfully	dict.txt:1
+fruiting	dict.txt:1
+frittering	dict.txt:1
+freemasonry	dict.txt:1
+fruitfulness	dict.txt:1
+frivolously	dict.txt:1
+friendly	bible.txt:3	dict.txt:1	bible.txt:3	bible.txt:6
+freemen	dict.txt:1
+freshest	dict.txt:1
+fritters	dict.txt:1
+freeholder	dict.txt:1
+frameworks	dict.txt:1
+frustrated	dict.txt:1
+francs	dict.txt:1
+frostily	dict.txt:1
+frocks	dict.txt:1
+freshman	dict.txt:1
+frugal	dict.txt:1
+freer	dict.txt:1
+frostier	dict.txt:1
+froze	dict.txt:1
+freaks	dict.txt:1
+frail	bible.txt:1	dict.txt:1	bible.txt:1	bible.txt:2
+friendlies	dict.txt:1
+frolics	dict.txt:1
+frittered	dict.txt:1
+franked	dict.txt:1
+freeholders	dict.txt:1
+frostiest	dict.txt:1
+franchises	dict.txt:1
+fret	bible.txt:7	dict.txt:1	bible.txt:7	bible.txt:14
+fruitcakes	dict.txt:1
+frame	bible.txt:5	dict.txt:1	bible.txt:5	bible.txt:10
+frightening	dict.txt:1
+frilly	dict.txt:1
+fractures	dict.txt:1
+frustrateth	bible.txt:1	bible.txt:1	bible.txt:2
+fructose	dict.txt:1
+frightened	dict.txt:1
+frugality	dict.txt:1
+frozen	bible.txt:1	dict.txt:1	bible.txt:1	bible.txt:2
+frowardness	bible.txt:3	bible.txt:3	bible.txt:6
+friendlier	dict.txt:1
+frays	dict.txt:1
+frost	bible.txt:6	dict.txt:1	bible.txt:6	bible.txt:12
+frothing	dict.txt:1
+fractals	dict.txt:1
+frolic	dict.txt:1
+franc	dict.txt:1
+frequented	dict.txt:1
+fractious	dict.txt:1
+frigates	dict.txt:1
+frailest	dict.txt:1
+frolicked	dict.txt:1
+freighters	dict.txt:1
+frizzle	dict.txt:1
+fry	dict.txt:1
+fruitfully	dict.txt:1
+frowned	dict.txt:1
+frothed	dict.txt:1
+fright	dict.txt:1
+frisked	dict.txt:1
+frequencies	dict.txt:1
+frantically	dict.txt:1
+froth	dict.txt:1
+frequents	dict.txt:1
+fraternise	dict.txt:1
+frictions	dict.txt:1
+fraudulently	dict.txt:1
+fretboard	dict.txt:1
+frostbite	dict.txt:1
+franchising	dict.txt:1
+freezer	dict.txt:1
+frosting	dict.txt:1
+freesias	dict.txt:1
+freeman	bible.txt:1	bible.txt:1	bible.txt:2
+freakish	dict.txt:1
+frond	dict.txt:1
+friendlily	dict.txt:1
+fronting	dict.txt:1
+froths	dict.txt:1
+frustum	dict.txt:1
+freelancer	dict.txt:1
+fragments	bible.txt:7	dict.txt:1	bible.txt:7	bible.txt:14
+frictionless	dict.txt:1
+fruitiest	dict.txt:1
+frauds	dict.txt:1
+frankincense	bible.txt:17	dict.txt:1	bible.txt:17	bible.txt:34
+fracas	dict.txt:1
+frenzied	dict.txt:1
+fraternizing	dict.txt:1
+fronts	dict.txt:1
+franchisee	dict.txt:1
+fraudulent	dict.txt:1
+frustration	dict.txt:1
+frisky	dict.txt:1
+freebooters	dict.txt:1
+frosted	dict.txt:1
+freshener	dict.txt:1
+frayed	dict.txt:1
+frothier	dict.txt:1
+frying	dict.txt:1
+fragmenting	dict.txt:1
+fries	dict.txt:1
+freezes	dict.txt:1
+frisson	dict.txt:1
+friar	dict.txt:1
+freelancing	dict.txt:1
+frustratedly	dict.txt:1
+frames	dict.txt:1
+frillier	dict.txt:1
+friendship	bible.txt:2	dict.txt:1	bible.txt:2	bible.txt:4
+freon	dict.txt:1
+franchised	dict.txt:1
+frailly	dict.txt:1
+frigate	dict.txt:1
+fragrance	dict.txt:1
+frequency	dict.txt:1
+fractional	dict.txt:1
+frill	dict.txt:1
+frenetic	dict.txt:1
+frontiers	bible.txt:1	dict.txt:1	bible.txt:1	bible.txt:2
+fruitful	bible.txt:35	dict.txt:1	bible.txt:35	bible.txt:70
+frightful	dict.txt:1
+fried	bible.txt:2	dict.txt:1	bible.txt:2	bible.txt:4
+freezers	dict.txt:1
+fruitless	dict.txt:1
+frogs	bible.txt:14	dict.txt:1	bible.txt:14	bible.txt:28
+fretteth	bible.txt:1	bible.txt:1	bible.txt:2
+frequently	dict.txt:1
+frazzled	dict.txt:1
+fractionate	dict.txt:1
+fretted	bible.txt:1	dict.txt:1	bible.txt:1	bible.txt:2
+frustrating	dict.txt:1
+freeing	dict.txt:1
+franchisees	dict.txt:1
+frizzles	dict.txt:1
+fraction	dict.txt:1
+frequent	bible.txt:1	dict.txt:1	bible.txt:1	bible.txt:2
+frequenting	dict.txt:1
+friendlessness	dict.txt:1
+friezes	dict.txt:1
+frangipani	dict.txt:1
+freeze	dict.txt:1
+frilled	dict.txt:1
+frankness	dict.txt:1
+fratricidal	dict.txt:1
+frazzle	dict.txt:1
+frothy	dict.txt:1
+friary	dict.txt:1
+fraternize	dict.txt:1
+franks	dict.txt:1
+fractionated	dict.txt:1
+frescos	dict.txt:1
+freehand	dict.txt:1
+frontispieces	dict.txt:1
+friendliness	dict.txt:1
+fragility	dict.txt:1
+frumpy	dict.txt:1
+fronds	dict.txt:1
+friendliest	dict.txt:1
+fretwork	dict.txt:1
+fresher	bible.txt:1	dict.txt:1	bible.txt:1	bible.txt:2
+fringing	dict.txt:1
+freshened	dict.txt:1
+frivolous	dict.txt:1
+frisk	dict.txt:1
+fraternal	dict.txt:1
+freedoms	dict.txt:1
+fractions	dict.txt:1
+fracture	dict.txt:1
+freewheeling	dict.txt:1
+fraudsters	dict.txt:1
+freshly	dict.txt:1
+fresh	bible.txt:4	dict.txt:1	bible.txt:4	bible.txt:8
+frankest	dict.txt:1
+fresheners	dict.txt:1
+fruit	bible.txt:208	dict.txt:1	bible.txt:208	bible.txt:416
+freeholds	dict.txt:1
+franchise	dict.txt:1
+frenziedly	dict.txt:1
+freak	dict.txt:1
+freshening	dict.txt:1
+fretful	dict.txt:1
+fruitlessly	dict.txt:1
+fracturing	dict.txt:1
+fragmentary	dict.txt:1
+fraudster	dict.txt:1
+frenzy	dict.txt:1
+frets	dict.txt:1
+frosty	dict.txt:1
+frustratingly	dict.txt:1
+fruitier	dict.txt:1
+fringes	bible.txt:2	dict.txt:1	bible.txt:2	bible.txt:4
+friction	dict.txt:1
+friend	bible.txt:53	dict.txt:1	bible.txt:53	bible.txt:106
+friends	bible.txt:49	dict.txt:1	bible.txt:49	bible.txt:98
+freighted	dict.txt:1
+friskiest	dict.txt:1
+francophone	dict.txt:1
+fringed	dict.txt:1
+fractionation	dict.txt:1
+freest	dict.txt:1
+friars	dict.txt:1
+frown	dict.txt:1
+fraternities	dict.txt:1
+frighten	dict.txt:1
+frisking	dict.txt:1
+freelance	dict.txt:1
+fratricide	dict.txt:1
+fragmentation	dict.txt:1
+fraying	dict.txt:1
+fruition	dict.txt:1
+freckles	dict.txt:1
+frowns	dict.txt:1
+frostbitten	dict.txt:1
+framework	dict.txt:1
+framed	bible.txt:4	dict.txt:1	bible.txt:4	bible.txt:8
+fraught	dict.txt:1
+fruitlessness	dict.txt:1
+frilliest	dict.txt:1
+fruitcake	dict.txt:1
+fragrant	dict.txt:1
+frescoes	dict.txt:1
+frightens	dict.txt:1
+fraud	bible.txt:2	dict.txt:1	bible.txt:2	bible.txt:4
+freewoman	bible.txt:3	bible.txt:3	bible.txt:6
+freehold	dict.txt:1
+frontages	dict.txt:1
+frog	dict.txt:1
+fragmented	dict.txt:1
+from	bible.txt:3657	dict.txt:1	bible.txt:3657	bible.txt:7314
+fretting	bible.txt:3	dict.txt:1	bible.txt:3	bible.txt:6
+frigid	dict.txt:1
+franchisor	dict.txt:1
+freshmen	dict.txt:1
+froward	bible.txt:21	bible.txt:21	bible.txt:42
+frontlets	bible.txt:3	bible.txt:3	bible.txt:6
+frontier	dict.txt:1
+frailties	dict.txt:1
+frustrates	dict.txt:1
+fricatives	dict.txt:1
+frenetically	dict.txt:1
+fractured	dict.txt:1
+fretless	dict.txt:1
+fretfulness	dict.txt:1
+fro	bible.txt:25	dict.txt:1	bible.txt:25	bible.txt:50
+fractionating	dict.txt:1
+frowardly	bible.txt:1	bible.txt:1	bible.txt:2
+frivolity	dict.txt:1
+freelancers	dict.txt:1
+freestyle	dict.txt:1
+fryer	dict.txt:1
+fruits	bible.txt:42	dict.txt:1	bible.txt:42	bible.txt:84
+frontispiece	dict.txt:1
+fricative	dict.txt:1
+frivolities	dict.txt:1
+frock	dict.txt:1
+framing	dict.txt:1
+frustrations	dict.txt:1
+frank	dict.txt:1
+freshwater	dict.txt:1
+fringe	bible.txt:2	dict.txt:1	bible.txt:2	bible.txt:4
+free	bible.txt:64	dict.txt:1	bible.txt:64	bible.txt:128
+frippery	dict.txt:1
+frameth	bible.txt:2	bible.txt:2	bible.txt:4
+freedom	bible.txt:2	dict.txt:1	bible.txt:2	bible.txt:4
+freed	bible.txt:2	dict.txt:1	bible.txt:2	bible.txt:4
+frantic	dict.txt:1
+freely	bible.txt:21	dict.txt:1	bible.txt:21	bible.txt:42
+freezing	dict.txt:1
+frees	dict.txt:1
+frankfurter	dict.txt:1
+frighteners	dict.txt:1
+freshness	dict.txt:1
+frogman	dict.txt:1
+front	bible.txt:2	dict.txt:1	bible.txt:2	bible.txt:4
+freewheels	dict.txt:1
+fruitiness	dict.txt:1
+frailer	dict.txt:1
+freckled	bible.txt:1	dict.txt:1	bible.txt:1	bible.txt:2
+frieze	dict.txt:1
+fractionally	dict.txt:1
+frontally	dict.txt:1
+frailty	dict.txt:1
+fragrances	dict.txt:1
+freight	dict.txt:1
+frugally	dict.txt:1
+fray	bible.txt:3	dict.txt:1	bible.txt:3	bible.txt:6
+freelances	dict.txt:1
+fruity	dict.txt:1
+friendships	dict.txt:1
+fryingpan	bible.txt:2	bible.txt:2	bible.txt:4
+frigidity	dict.txt:1
+fraternising	dict.txt:1
+frolicsome	dict.txt:1
+fretfully	dict.txt:1
+frustrate	bible.txt:2	dict.txt:1	bible.txt:2	bible.txt:4
+frolicking	dict.txt:1
+frowningly	dict.txt:1
+frills	dict.txt:1
+frizzy	dict.txt:1
+friskier	dict.txt:1
+frowning	dict.txt:1
+frictional	dict.txt:1
+frankly	bible.txt:1	dict.txt:1	bible.txt:1	bible.txt:2
+fraternity	dict.txt:1
