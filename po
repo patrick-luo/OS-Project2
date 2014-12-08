@@ -1,0 +1,590 @@
+polluted	dict.txt:1	bible.txt:40
+pondereth	bible.txt:3
+pox	dict.txt:1
+polygynous	dict.txt:1
+polyatomic	dict.txt:1
+portraiture	dict.txt:1
+portentous	dict.txt:1
+pogroms	dict.txt:1
+polytechnics	dict.txt:1
+postilion	dict.txt:1
+podgy	dict.txt:1
+pomegranate	dict.txt:1	bible.txt:10
+polishers	dict.txt:1
+posse	dict.txt:1
+poseurs	dict.txt:1
+polythene	dict.txt:1
+popularised	dict.txt:1
+poled	dict.txt:1
+polymer	dict.txt:1
+population	dict.txt:1
+postmasters	dict.txt:1
+polonaises	dict.txt:1
+polyandry	dict.txt:1
+popper	dict.txt:1
+potentiometers	dict.txt:1
+portables	dict.txt:1
+policewomen	dict.txt:1
+posing	dict.txt:1
+postcodes	dict.txt:1
+poseur	dict.txt:1
+polices	dict.txt:1
+pollinator	dict.txt:1
+pokers	dict.txt:1
+porphyritic	dict.txt:1
+potency	dict.txt:1
+polytheists	dict.txt:1
+position	dict.txt:1
+powerfulness	dict.txt:1
+polluter	dict.txt:1
+portable	dict.txt:1
+porker	dict.txt:1
+pounced	dict.txt:1
+pornographer	dict.txt:1
+politicised	dict.txt:1
+popularisation	dict.txt:1
+postponed	dict.txt:1
+pourtrayed	bible.txt:3
+positiveness	dict.txt:1
+pointlessly	dict.txt:1
+policies	dict.txt:1
+postilions	dict.txt:1
+polarizations	dict.txt:1
+postbag	dict.txt:1
+poetry	dict.txt:1
+pods	dict.txt:1
+portending	dict.txt:1
+possessed	dict.txt:1	bible.txt:40
+poultry	dict.txt:1
+polemicist	dict.txt:1
+pornographic	dict.txt:1
+potsherd	bible.txt:4
+positions	dict.txt:1
+pointillism	dict.txt:1
+postulating	dict.txt:1
+pots	dict.txt:1	bible.txt:15
+poisoned	dict.txt:1
+policemen	dict.txt:1
+pointillist	dict.txt:1
+polyethylene	dict.txt:1
+portmanteaus	dict.txt:1
+polytheistic	dict.txt:1
+polio	dict.txt:1
+polygon	dict.txt:1
+polyglot	dict.txt:1
+pompous	dict.txt:1
+pontificated	dict.txt:1
+pottery	dict.txt:1
+polyhedral	dict.txt:1
+postulates	dict.txt:1
+portions	dict.txt:1	bible.txt:16
+pock	dict.txt:1
+posterior	dict.txt:1
+poliomyelitis	dict.txt:1
+postal	dict.txt:1
+polity	dict.txt:1
+possessive	dict.txt:1
+polarize	dict.txt:1
+pounce	dict.txt:1
+pouffe	dict.txt:1
+popped	dict.txt:1
+porous	dict.txt:1
+pouting	dict.txt:1
+poll	dict.txt:1	bible.txt:3
+ponder	dict.txt:1	bible.txt:2
+pogrom	dict.txt:1
+potties	dict.txt:1
+polymers	dict.txt:1
+potencies	dict.txt:1
+port	dict.txt:1	bible.txt:1
+poke	dict.txt:1
+posters	dict.txt:1
+portent	dict.txt:1
+populating	dict.txt:1
+potter!	bible.txt:1
+porcine	dict.txt:1
+poultice	dict.txt:1
+polemics	dict.txt:1
+politest	dict.txt:1
+pouffes	dict.txt:1
+pourtray	bible.txt:1
+populate	dict.txt:1
+pollutes	dict.txt:1
+polarise	dict.txt:1
+popes	dict.txt:1
+potipherah	bible.txt:3
+pod	dict.txt:1
+political	dict.txt:1
+pork	dict.txt:1
+polluters	dict.txt:1
+portfolios	dict.txt:1
+poppy	dict.txt:1
+possessiveness	dict.txt:1
+poster	dict.txt:1
+poppies	dict.txt:1
+pouted	dict.txt:1
+positivists	dict.txt:1
+portico	dict.txt:1
+poisoning	dict.txt:1
+polypeptides	dict.txt:1
+pointer	dict.txt:1
+ports	dict.txt:1
+pointless	dict.txt:1
+postmistress	dict.txt:1
+pottered	dict.txt:1
+pouring	dict.txt:1	bible.txt:2
+posturing	dict.txt:1
+polytopes	dict.txt:1
+postures	dict.txt:1
+possessions	dict.txt:1	bible.txt:13
+pontoons	dict.txt:1
+pouts	dict.txt:1
+poles	dict.txt:1
+positron	dict.txt:1
+portholes	dict.txt:1
+porpoises	dict.txt:1
+pompously	dict.txt:1
+polycyclic	dict.txt:1
+pollens	dict.txt:1
+pooh	dict.txt:1
+ponderous	dict.txt:1
+powdering	dict.txt:1
+polygamy	dict.txt:1
+pontiff	dict.txt:1
+potash	dict.txt:1
+points	dict.txt:1	bible.txt:2
+polychromatic	dict.txt:1
+postponements	dict.txt:1
+poise	dict.txt:1
+polymorphisms	dict.txt:1
+politicise	dict.txt:1
+polecats	dict.txt:1
+polynomials	dict.txt:1
+pogo	dict.txt:1
+possible	dict.txt:1	bible.txt:15
+possessors	dict.txt:1	bible.txt:2
+possibly	dict.txt:1
+pointing	dict.txt:1
+poulterer	dict.txt:1
+positivism	dict.txt:1
+polewards	dict.txt:1
+polarising	dict.txt:1
+polarized	dict.txt:1
+polyesters	dict.txt:1
+politics	dict.txt:1
+point	dict.txt:1	bible.txt:9
+ported	dict.txt:1
+ponies	dict.txt:1
+powder	dict.txt:1	bible.txt:8
+pompadour	dict.txt:1
+polisher	dict.txt:1
+pointed	dict.txt:1	bible.txt:1
+polo	dict.txt:1
+populism	dict.txt:1
+politicized	dict.txt:1
+poets	dict.txt:1	bible.txt:1
+poor	dict.txt:1	bible.txt:205
+politicos	dict.txt:1
+portrayed	dict.txt:1
+pollster	dict.txt:1
+polygraph	dict.txt:1
+polonium	dict.txt:1
+polarisations	dict.txt:1
+postscripts	dict.txt:1
+polymorphic	dict.txt:1
+potting	dict.txt:1
+postcards	dict.txt:1
+pose	dict.txt:1
+poring	dict.txt:1
+porting	dict.txt:1
+politicize	dict.txt:1
+popularize	dict.txt:1
+poach	dict.txt:1
+polysaccharide	dict.txt:1
+poetic	dict.txt:1
+pointedly	dict.txt:1
+porthole	dict.txt:1
+poureth	bible.txt:10
+policewoman	dict.txt:1
+pound	dict.txt:1	bible.txt:10
+pouches	dict.txt:1
+polyp	dict.txt:1
+porcius	bible.txt:1
+poplars	dict.txt:1	bible.txt:1
+popularisations	dict.txt:1
+poundage	dict.txt:1
+pooling	dict.txt:1
+polytechnic	dict.txt:1
+porcupines	dict.txt:1
+podium	dict.txt:1
+potter	dict.txt:1	bible.txt:18
+polymeric	dict.txt:1
+portrays	dict.txt:1
+positive	dict.txt:1
+polynomially	dict.txt:1
+possibility	dict.txt:1	bible.txt:1
+polishing	dict.txt:1	bible.txt:1
+pondering	dict.txt:1
+popping	dict.txt:1
+pointers	dict.txt:1
+poisonings	dict.txt:1
+polecat	dict.txt:1
+pocked	dict.txt:1
+polymerized	dict.txt:1
+policy	dict.txt:1	bible.txt:1
+potters	dict.txt:1	bible.txt:3
+politesse	dict.txt:1
+politer	dict.txt:1
+polysyllabic	dict.txt:1
+postillion	dict.txt:1
+policeman	dict.txt:1
+positively	dict.txt:1
+polygamous	dict.txt:1
+pontifications	dict.txt:1
+powerfully	dict.txt:1
+positioned	dict.txt:1
+postmodernism	dict.txt:1
+poodles	dict.txt:1
+portend	dict.txt:1
+posture	dict.txt:1
+polyhedra	dict.txt:1
+possessing	dict.txt:1	bible.txt:1
+postured	dict.txt:1
+pollinated	dict.txt:1
+populated	dict.txt:1
+pop	dict.txt:1
+poplar	dict.txt:1	bible.txt:1
+pot	dict.txt:1	bible.txt:22
+potholes	dict.txt:1
+poisoner	dict.txt:1
+polytheism	dict.txt:1
+polyurethane	dict.txt:1
+polemical	dict.txt:1
+posthumously	dict.txt:1
+postmodernist	dict.txt:1
+portfolio	dict.txt:1
+potions	dict.txt:1
+polishes	dict.txt:1
+pontifical	dict.txt:1
+postscript	dict.txt:1
+poppycock	dict.txt:1
+pollen	dict.txt:1
+poky	dict.txt:1
+pour	dict.txt:1	bible.txt:63
+polishings	dict.txt:1
+pollination	dict.txt:1
+polymerases	dict.txt:1
+polarity	dict.txt:1
+postbox	dict.txt:1
+posers	dict.txt:1
+polyglots	dict.txt:1
+politicians	dict.txt:1
+possessest	bible.txt:1
+popcorn	dict.txt:1
+postpones	dict.txt:1
+posited	dict.txt:1
+polymerisation	dict.txt:1
+pounds	dict.txt:1	bible.txt:5
+politicising	dict.txt:1
+pollinators	dict.txt:1
+polls	dict.txt:1	bible.txt:6
+poorer	dict.txt:1	bible.txt:1
+portcullises	dict.txt:1
+politeness	dict.txt:1
+pottage	dict.txt:1	bible.txt:7
+polarisation	dict.txt:1
+pollution	dict.txt:1	bible.txt:1
+poet	dict.txt:1
+porpoise	dict.txt:1
+ponchos	dict.txt:1
+pool	dict.txt:1	bible.txt:22
+polymerised	dict.txt:1
+politicking	dict.txt:1
+postboxes	dict.txt:1
+poison	dict.txt:1	bible.txt:9
+positionable	dict.txt:1
+popularise	dict.txt:1
+pottering	dict.txt:1
+police	dict.txt:1
+polypropylene	dict.txt:1
+power	dict.txt:1	bible.txt:272
+pours	dict.txt:1
+pondered	dict.txt:1	bible.txt:1
+pollute	dict.txt:1	bible.txt:11
+potty	dict.txt:1
+pornographers	dict.txt:1
+polynomial	dict.txt:1
+potentates	dict.txt:1
+possibilities	dict.txt:1
+pounded	dict.txt:1
+pollinate	dict.txt:1
+posted	dict.txt:1	bible.txt:6
+pontus	bible.txt:3
+portability	dict.txt:1
+pollarded	dict.txt:1
+polyphonic	dict.txt:1
+poignantly	dict.txt:1
+potassium	dict.txt:1
+postulation	dict.txt:1
+polygyny	dict.txt:1
+powerless	dict.txt:1
+portmanteau	dict.txt:1
+pointlessness	dict.txt:1
+portended	dict.txt:1
+poetical	dict.txt:1
+pouredst	bible.txt:1
+portrayal	dict.txt:1
+pouch	dict.txt:1
+pontification	dict.txt:1
+positives	dict.txt:1
+polyunsaturates	dict.txt:1
+powdery	dict.txt:1
+poverty	dict.txt:1	bible.txt:15
+powerlessness	dict.txt:1
+popular	dict.txt:1
+porphyry	dict.txt:1
+powerboats	dict.txt:1
+postmaster	dict.txt:1
+politician	dict.txt:1
+potently	dict.txt:1
+poolside	dict.txt:1
+polysaccharides	dict.txt:1
+poses	dict.txt:1
+pouncing	dict.txt:1
+possum	dict.txt:1
+politicisation	dict.txt:1
+posts	dict.txt:1	bible.txt:42
+poltergeists	dict.txt:1
+portage	dict.txt:1
+posthumous	dict.txt:1
+polarization	dict.txt:1
+posies	dict.txt:1
+pollsters	dict.txt:1
+portion	dict.txt:1	bible.txt:100
+pointy	dict.txt:1
+poikilothermic	dict.txt:1
+postmen	dict.txt:1
+postulate	dict.txt:1
+poems	dict.txt:1
+powered	dict.txt:1
+poetically	dict.txt:1
+pontificating	dict.txt:1
+pollutions	dict.txt:1	bible.txt:2
+postgraduate	dict.txt:1
+politic	dict.txt:1
+poodle	dict.txt:1
+polyphony	dict.txt:1
+posed	dict.txt:1
+popularising	dict.txt:1
+pond	dict.txt:1
+poker	dict.txt:1
+powerboat	dict.txt:1
+potato	dict.txt:1
+posterity	dict.txt:1	bible.txt:9
+polymerization	dict.txt:1
+pointedness	dict.txt:1
+porky	dict.txt:1
+postlude	dict.txt:1
+pocketing	dict.txt:1
+posteriors	dict.txt:1
+powdered	dict.txt:1
+polling	dict.txt:1
+populations	dict.txt:1
+postural	dict.txt:1
+polycrystalline	dict.txt:1
+poncho	dict.txt:1
+pothole	dict.txt:1
+poltergeist	dict.txt:1
+portly	dict.txt:1
+posy	dict.txt:1
+possums	dict.txt:1
+postcard	dict.txt:1
+portrait	dict.txt:1
+potentially	dict.txt:1
+poser	dict.txt:1
+poked	dict.txt:1
+ponds	dict.txt:1	bible.txt:3
+politically	dict.txt:1
+possessively	dict.txt:1
+potable	dict.txt:1
+pochereth	bible.txt:2
+portraits	dict.txt:1
+pornography	dict.txt:1
+poured	dict.txt:1	bible.txt:84
+polonaise	dict.txt:1
+porch	dict.txt:1	bible.txt:39
+posting	dict.txt:1
+polled	dict.txt:1	bible.txt:3
+poignant	dict.txt:1
+poratha	bible.txt:1
+populists	dict.txt:1
+poorness	dict.txt:1
+postmarked	dict.txt:1
+pout	dict.txt:1
+polysyllable	dict.txt:1
+pontoon	dict.txt:1
+portrayals	dict.txt:1
+portals	dict.txt:1
+politely	dict.txt:1
+possess	dict.txt:1	bible.txt:106
+polluting	dict.txt:1	bible.txt:2
+pomposity	dict.txt:1
+positrons	dict.txt:1
+policing	dict.txt:1
+possession	dict.txt:1	bible.txt:105
+porosity	dict.txt:1
+pocketbook	dict.txt:1
+poisonous	dict.txt:1
+pockets	dict.txt:1
+poetics	dict.txt:1
+positivist	dict.txt:1
+potiphar	bible.txt:2
+polyhedron	dict.txt:1
+polypeptide	dict.txt:1
+postpone	dict.txt:1
+portents	dict.txt:1
+portentously	dict.txt:1
+postponement	dict.txt:1
+pourable	dict.txt:1
+postage	dict.txt:1
+portends	dict.txt:1
+ponderously	dict.txt:1
+pounding	dict.txt:1
+potatoes	dict.txt:1
+poltroon	dict.txt:1
+positional	dict.txt:1
+polygons	dict.txt:1
+postmark	dict.txt:1
+policyholders	dict.txt:1
+postponing	dict.txt:1
+poetess	dict.txt:1
+pollinating	dict.txt:1
+policed	dict.txt:1
+poacher	dict.txt:1
+potential	dict.txt:1
+pocketful	dict.txt:1
+poisons	dict.txt:1
+pokes	dict.txt:1
+poignancy	dict.txt:1
+poachers	dict.txt:1
+possessives	dict.txt:1
+pontificate	dict.txt:1
+postcode	dict.txt:1
+polish	dict.txt:1
+positivity	dict.txt:1
+postdoctoral	dict.txt:1
+pools	dict.txt:1	bible.txt:5
+porridge	dict.txt:1
+postings	dict.txt:1
+polyester	dict.txt:1
+postgraduates	dict.txt:1
+pore	dict.txt:1
+potteries	dict.txt:1
+poorly	dict.txt:1
+polarised	dict.txt:1
+poaching	dict.txt:1
+poised	dict.txt:1
+polytheist	dict.txt:1
+populous	dict.txt:1	bible.txt:2
+polyps	dict.txt:1
+poinsettias	dict.txt:1
+powers	dict.txt:1	bible.txt:14
+potsherds	dict.txt:1	bible.txt:1
+porter	dict.txt:1	bible.txt:6
+potentate	dict.txt:1	bible.txt:1
+powerhouse	dict.txt:1
+possesses	dict.txt:1
+portray	dict.txt:1
+polite	dict.txt:1
+polychrome	dict.txt:1
+poleward	dict.txt:1
+ponytail	dict.txt:1
+posturings	dict.txt:1
+porches	dict.txt:1	bible.txt:2
+polar	dict.txt:1
+polymorphous	dict.txt:1
+policyholder	dict.txt:1
+portraying	dict.txt:1
+potentiometer	dict.txt:1
+potent	dict.txt:1
+pole	dict.txt:1	bible.txt:2
+pooled	dict.txt:1
+poem	dict.txt:1
+poising	dict.txt:1
+pony	dict.txt:1
+postmodern	dict.txt:1
+poking	dict.txt:1
+populace	dict.txt:1
+pomp	dict.txt:1	bible.txt:7
+pommels	bible.txt:3
+pops	dict.txt:1
+ponce	dict.txt:1
+portal	dict.txt:1
+polymorphism	dict.txt:1
+postmarks	dict.txt:1
+popularity	dict.txt:1
+potentiality	dict.txt:1
+pope	dict.txt:1
+powerhouses	dict.txt:1
+polycarbonate	dict.txt:1
+polarizing	dict.txt:1
+porters	dict.txt:1	bible.txt:33
+possessor	dict.txt:1	bible.txt:2
+powerful	dict.txt:1	bible.txt:3
+popularly	dict.txt:1
+pomegranates	dict.txt:1	bible.txt:23
+pocket	dict.txt:1
+postfixes	dict.txt:1
+popularized	dict.txt:1
+potentialities	dict.txt:1
+polygonal	dict.txt:1
+pollux	bible.txt:1
+powders	dict.txt:1	bible.txt:1
+pompousness	dict.txt:1
+pontiffs	dict.txt:1
+polycotton	dict.txt:1
+poppet	dict.txt:1
+pontius	bible.txt:4
+potion	dict.txt:1
+populist	dict.txt:1
+polysyllables	dict.txt:1
+possibles	dict.txt:1
+popularizing	dict.txt:1
+positioning	dict.txt:1
+potted	dict.txt:1
+postman	dict.txt:1
+pored	dict.txt:1
+polymath	dict.txt:1
+positionally	dict.txt:1
+pounces	dict.txt:1
+poop	dict.txt:1
+polystyrene	dict.txt:1
+politicization	dict.txt:1
+porcelain	dict.txt:1
+post	dict.txt:1	bible.txt:11
+pollutants	dict.txt:1
+polished	dict.txt:1	bible.txt:3
+portcullis	dict.txt:1
+pocketed	dict.txt:1
+portraitist	dict.txt:1
+posits	dict.txt:1
+poached	dict.txt:1
+possesseth	bible.txt:2
+poorest	dict.txt:1	bible.txt:1
+polarities	dict.txt:1
+porcupine	dict.txt:1
+polyunsaturated	dict.txt:1
+pores	dict.txt:1
+pollutant	dict.txt:1
+potentials	dict.txt:1
+polymerase	dict.txt:1
+posit	dict.txt:1
+postulated	dict.txt:1
+pomade	dict.txt:1
+polemic	dict.txt:1
+polka	dict.txt:1
+porterage	dict.txt:1
+politburo	dict.txt:1
+positing	dict.txt:1
+ponders	dict.txt:1
+powering	dict.txt:1
