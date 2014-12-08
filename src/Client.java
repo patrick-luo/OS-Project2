@@ -42,7 +42,7 @@ public class Client implements Sender, Receiver {
 		// bind socket to google server
 		client.connectToGoogleServer();
 
-		String documentPath = "D1";
+		String documentPath = "bible.txt";
 		String requestType = "indexing";
 		String requestType2 = "searching";
 		String requestContent = documentPath;

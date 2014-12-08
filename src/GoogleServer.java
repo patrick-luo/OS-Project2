@@ -186,6 +186,7 @@ public class GoogleServer extends Server {
 			else {
 				// error information
 			}
+			Debug.println("Have split tasks for xid = " + xid);
 		}
 
 		private void sendTaskToHelper() throws IOException {
