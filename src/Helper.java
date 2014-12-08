@@ -131,7 +131,7 @@ public class Helper extends Server {
 				middleResult.put(task.xid, new ArrayList<Message>());
 			}
 			ConcurrentHashMap<String, String> indexingMiddleResult = 
-					GoogleFileManager.mapIndexing((String[])task.content);
+					GoogleFileManager.mapIndexing((String[])task.content, false);
 			ArrayList<IPPort> helperList = getHelperList();
 			List<ConcurrentHashMap<String, String>> copiesToSend = 
 					GoogleFileManager.indexingSplit(indexingMiddleResult, helperList.size());

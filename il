@@ -1,0 +1,54 @@
+illegitimacy	dict.txt:1
+illustrations	dict.txt:1
+illuminating	dict.txt:1
+illegitimate	dict.txt:1
+illegible	dict.txt:1
+illegality	dict.txt:1
+ilmenite	dict.txt:1
+illyricum	bible.txt:1	bible.txt:1	bible.txt:2
+ilai	bible.txt:1	bible.txt:1	bible.txt:2
+illustration	dict.txt:1
+ills	dict.txt:1
+illuminated	bible.txt:1	dict.txt:1	bible.txt:1	bible.txt:2
+illustrated	dict.txt:1
+illustrators	dict.txt:1
+illusions	dict.txt:1
+illiterates	dict.txt:1
+illusory	dict.txt:1
+illegalities	dict.txt:1
+illicit	dict.txt:1
+illegitimately	dict.txt:1
+illustrate	dict.txt:1
+illumination	dict.txt:1
+ill	bible.txt:15	dict.txt:1	bible.txt:15	bible.txt:30
+illimitable	dict.txt:1
+illusion	dict.txt:1
+illusionists	dict.txt:1
+illnesses	dict.txt:1
+illogicality	dict.txt:1
+illustrates	dict.txt:1
+illegibly	dict.txt:1
+illiquid	dict.txt:1
+illuminates	dict.txt:1
+ileum	dict.txt:1
+illustrating	dict.txt:1
+illustrative	dict.txt:1
+illiteracy	dict.txt:1
+illuminations	dict.txt:1
+illuminant	dict.txt:1
+illness	dict.txt:1
+illusionist	dict.txt:1
+illustrator	dict.txt:1
+illiberal	dict.txt:1
+illiterate	dict.txt:1
+illusive	dict.txt:1
+illegal	dict.txt:1
+illogically	dict.txt:1
+illicitly	dict.txt:1
+illustrious	dict.txt:1
+illegibility	dict.txt:1
+illogical	dict.txt:1
+illuminate	dict.txt:1
+illegally	dict.txt:1
+ilk	dict.txt:1
+illumine	dict.txt:1

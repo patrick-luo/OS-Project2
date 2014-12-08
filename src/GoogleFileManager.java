@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,17 +14,30 @@ public class GoogleFileManager {
 	private long begin;
 	private long end;
 	private RandomAccessFile file;
+	FileChannel fc;
 
-	public GoogleFileManager(String filePath) throws IOException {
+	public GoogleFileManager(String filePath, boolean overwrite)
+			throws IOException {
+
 		this.filePath = filePath;
+
 		try {
 			file = new RandomAccessFile(filePath, "rw");
+			if (overwrite) {
+				FileChannel fc = file.getChannel();
+				FileLock lock = fc.lock();
+				this.deleteFile();
+				file = new RandomAccessFile(filePath, "rw");
+				lock.release();
+				fc.close();
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.begin = 0;
 		this.end = file.length();
+		this.fc = file.getChannel();
 		// file.seek(this.begin);
 	}
 
@@ -38,6 +53,7 @@ public class GoogleFileManager {
 		this.begin = begin;
 		this.end = end;
 		file.seek(this.begin);
+		this.fc = file.getChannel();
 	}
 
 	/**
@@ -49,16 +65,21 @@ public class GoogleFileManager {
 	 * @return
 	 * @throws IOException
 	 */
-	public static ConcurrentHashMap<String, String> mapIndexing(String[] task)
-			throws IOException {
+	public static ConcurrentHashMap<String, String> mapIndexing(String[] task,
+			boolean wholeBook) throws IOException {
 		ConcurrentHashMap<String, String> oneLevelIndex = new ConcurrentHashMap<String, String>();
 
 		String fileName = task[0];
-		long begin = Long.parseLong(task[1]);
-		long end = Long.parseLong(task[2]);
-		GoogleFileManager gm = new GoogleFileManager(fileName, begin, end);
+		GoogleFileManager gm = null;
+		if (wholeBook) {
+			gm = new GoogleFileManager(fileName, false);
+		} else {
+			long begin = Long.parseLong(task[1]);
+			long end = Long.parseLong(task[2]);
+			gm = new GoogleFileManager(fileName, begin, end);
+		}
 		for (String line; (line = gm.readLine()) != null;) {
-			String regexp = "[\\s,;\\n\\t]+";
+			String regexp = "[\\s,;\\n\\t.:?\\d\\(\\)\\[\\]\"\\*\'/]+";
 			String[] tokens = line.split(regexp);
 			for (int i = 0; i < tokens.length; i++) {
 				String token = tokens[i].toLowerCase();
@@ -72,6 +93,7 @@ public class GoogleFileManager {
 				String pair;
 				if (!oneLevelIndex.containsKey(token)) {
 					pair = fileName + ":" + 0;
+					oneLevelIndex.put(token, pair);
 				}
 				pair = oneLevelIndex.get(token);
 				int cnt = Integer.parseInt(pair.split(":")[1]);
@@ -80,6 +102,7 @@ public class GoogleFileManager {
 			}
 		}
 
+		gm.close();
 		return oneLevelIndex;
 	}
 
@@ -116,14 +139,16 @@ public class GoogleFileManager {
 			throws IOException {
 
 		ConcurrentHashMap<String, ConcurrentHashMap<String, String>> invertedIndicesLevelTwo = merge(invertedIndicesLevelOne);
+		for(String filePath: invertedIndicesLevelTwo.keySet())
+			Debug.println(filePath);
 		// each
-		for (String fileName : invertedIndicesLevelTwo.keySet()) {
+		for (String filePath : invertedIndicesLevelTwo.keySet()) {
 
 			// read all stuffs from a file into a one level hash table
-			String filePath = fileName.charAt(0) + "/" + fileName;
 			ConcurrentHashMap<String, List<String>> diskIndex = reducerReadInvertedIndexFromFile(filePath);
+			// if file doesn't exist, diskIndex will be an empty hash table
 			ConcurrentHashMap<String, String> memIndex = invertedIndicesLevelTwo
-					.get(fileName);
+					.get(filePath);
 			// merge the one level hash table with the partial index
 			reducerMergeIndices(diskIndex, memIndex);
 			// write the merged result(one level hash table) into the disk
@@ -134,23 +159,23 @@ public class GoogleFileManager {
 
 	private static ConcurrentHashMap<String, ConcurrentHashMap<String, String>> merge(
 			List<ConcurrentHashMap<String, String>> invertedIndicesLevelOne) {
-		ConcurrentHashMap<String, ConcurrentHashMap<String, String>> twoLevelMap = 
-				new ConcurrentHashMap<String, ConcurrentHashMap<String,String>>();
+		ConcurrentHashMap<String, ConcurrentHashMap<String, String>> twoLevelMap = new ConcurrentHashMap<String, ConcurrentHashMap<String, String>>();
 		for (ConcurrentHashMap<String, String> oneLevelMap : invertedIndicesLevelOne) {
 			for (String word : oneLevelMap.keySet()) {
 				if (word.equals("###"))
 					break;
 				String filekey = word.substring(0, 2);
 				if (!twoLevelMap.containsKey(filekey)) {
-					twoLevelMap.put(filekey, new ConcurrentHashMap<String, String>());
+					twoLevelMap.put(filekey,
+							new ConcurrentHashMap<String, String>());
 					twoLevelMap.get(filekey).put(word, oneLevelMap.get(word));
-				}
-				else {
+				} else {
 					if (!twoLevelMap.get(filekey).containsKey(word)) {
-						twoLevelMap.get(filekey).put(word, oneLevelMap.get(word));
-					}
-					else {
-						int cnt = Integer.parseInt(twoLevelMap.get(filekey).get(word).split(":")[1]);
+						twoLevelMap.get(filekey).put(word,
+								oneLevelMap.get(word));
+					} else {
+						int cnt = Integer.parseInt(twoLevelMap.get(filekey)
+								.get(word).split(":")[1]);
 						String[] oldPair = oneLevelMap.get(word).split(":");
 						cnt += Integer.parseInt(oldPair[1]);
 						String updatedPair = oldPair[0] + ":" + cnt;
@@ -159,7 +184,7 @@ public class GoogleFileManager {
 				}
 			}
 		}
-		return null;
+		return twoLevelMap;
 	}
 
 	public static ConcurrentHashMap<String, List<String>> reduceSearching(
@@ -171,15 +196,15 @@ public class GoogleFileManager {
 
 	public static List<ConcurrentHashMap<String, String>> indexingSplit(
 			ConcurrentHashMap<String, String> bigMap, int partNum) {
-		ArrayList<ConcurrentHashMap<String, String>> smallMapList = new ArrayList<ConcurrentHashMap<String,String>>();
-		for (int i = 0; i < partNum; i ++) {
+		ArrayList<ConcurrentHashMap<String, String>> smallMapList = new ArrayList<ConcurrentHashMap<String, String>>();
+		for (int i = 0; i < partNum; i++) {
 			smallMapList.add(new ConcurrentHashMap<String, String>());
 		}
 		for (String word : bigMap.keySet()) {
 			int index = (word.charAt(0) - 'a') % partNum;
 			smallMapList.get(index).put(word, bigMap.get(word));
 		}
-		for (int i = 0; i < partNum; i ++) {
+		for (int i = 0; i < partNum; i++) {
 			if (smallMapList.get(i).isEmpty())
 				smallMapList.get(i).put("###", "qiaojie:-1");
 		}
@@ -187,6 +212,7 @@ public class GoogleFileManager {
 	}
 
 	private void close() throws IOException {
+		fc.close();
 		file.close();
 	}
 
@@ -196,20 +222,60 @@ public class GoogleFileManager {
 
 	public static void main(String[] args) throws IOException {
 
-		GoogleFileManager gms = new GoogleFileManager("haha.txt");
-		long length = gms.length();
-		GoogleFileManager gms1, gms2, gms3;
-		gms1 = new GoogleFileManager("haha.txt", 0, length / 3);
-		gms2 = new GoogleFileManager("haha.txt", length / 3, length * 2 / 3);
-		gms3 = new GoogleFileManager("haha.txt", length * 2 / 3, length);
-		for (String line; (line = gms2.readLine()) != null;)
-			System.out.println(line);
+		// GoogleFileManager gms = new GoogleFileManager("haha.txt", false);
+		// long length = gms.length();
+		// GoogleFileManager gms1, gms2, gms3;
+		// gms1 = new GoogleFileManager("haha.txt", 0, length / 3);
+		// gms2 = new GoogleFileManager("haha.txt", length / 3, length * 2 / 3);
+		// gms3 = new GoogleFileManager("haha.txt", length * 2 / 3, length);
+		// for (String line; (line = gms1.readLine()) != null;)
+		// System.out.println(line);
+		// System.out.println("-----1---------");
+		// gms1.close();
+		//
+		// for (String line; (line = gms2.readLine()) != null;)
+		// System.out.println(line);
+		// System.out.println("-----2---------");
+		// gms2.close();
+		//
+		// for (String line; (line = gms3.readLine()) != null;)
+		// System.out.println(line);
+		// System.out.println("-----3---------");
+		// gms3.close();
+		//
+		// gms1 = new GoogleFileManager("haha.txt", false);
+		// for (int i = 10001; i < 20000; i++) {
+		// gms1.writeLine(Integer.toString(i));
+		// }
+		// gms1.close();
+		//
+		// gms1 = new GoogleFileManager("haha.txt", 0, length / 3);
+		// gms2 = new GoogleFileManager("haha.txt", length / 3, length * 2 / 3);
+		// gms3 = new GoogleFileManager("haha.txt", length * 2 / 3, length);
+		// for (String line; (line = gms1.readLine()) != null;)
+		// System.out.println(line);
+		// System.out.println("-----1---------");
+		// gms1.close();
+		//
+		// for (String line; (line = gms2.readLine()) != null;)
+		// System.out.println(line);
+		// System.out.println("-----2---------");
+		// gms2.close();
+		//
+		// for (String line; (line = gms3.readLine()) != null;)
+		// System.out.println(line);
+		// System.out.println("-----3---------");
+		// gms3.close();
+		ConcurrentHashMap<String, String> book = mapIndexing(
+				new String[] { "bible.txt" }, true);
+		for (String word : book.keySet()) {
+			Debug.println(word + " [" + book.get(word).toString() + "] ");
+		}
+		List<ConcurrentHashMap<String, String>> booklist = new ArrayList<ConcurrentHashMap<String, String>>();
+		booklist.add(book);
+		booklist.add(book);
+		reduceIndexing(booklist);
 
-		// deleteFile("haha.txt");
-		/*
-		 * gms1 = new GoogleFileManager("haha.txt"); for(int i = 0; i < 10000;
-		 * i++){ gms1.writeLine(Integer.toString(i)); }
-		 */
 	}
 
 	/**
@@ -220,21 +286,26 @@ public class GoogleFileManager {
 	 * @throws IOException
 	 */
 	private String readLine() throws IOException {
+		String line = null;
 
+		FileLock lock = fc.lock();
 		long pos = file.getFilePointer();
 		if (pos >= end)
 			return null;
-
-		return file.readLine();
+		line = file.readLine();
+		lock.release();
+		return line;
 	}
 
-	private static void deleteFile(String filePath) {
+	private void deleteFile() throws IOException {
 		File file = new File(filePath);
 		file.delete();
 	}
 
 	private void writeLine(String str) throws IOException {
+		FileLock lock = fc.lock();
 		file.writeBytes(str + "\n");
+		lock.release();
 	}
 
 	/**
@@ -246,8 +317,7 @@ public class GoogleFileManager {
 	private static void reducerWriteInvertedIndexToFile(String filePath,
 			ConcurrentHashMap<String, List<String>> oneLevelIndex)
 			throws IOException {
-		deleteFile(filePath);
-		GoogleFileManager gm = new GoogleFileManager(filePath);
+		GoogleFileManager gm = new GoogleFileManager(filePath, true);
 		for (String word : oneLevelIndex.keySet()) {
 			StringBuilder sb = new StringBuilder();
 			sb.append(word);
@@ -269,7 +339,7 @@ public class GoogleFileManager {
 	 */
 	private static ConcurrentHashMap<String, List<String>> reducerReadInvertedIndexFromFile(
 			String filePath) throws IOException {
-		GoogleFileManager gm = new GoogleFileManager(filePath);
+		GoogleFileManager gm = new GoogleFileManager(filePath, false);
 		ConcurrentHashMap<String, List<String>> invertedIndex = new ConcurrentHashMap<String, List<String>>();
 		for (String line; (line = gm.readLine()) != null;) {
 			String[] tokens = line.split("\t");
@@ -283,33 +353,28 @@ public class GoogleFileManager {
 		return invertedIndex;
 	}
 
+	/**
+	 * assume no duplicated book will be indexed so all the value of the
+	 * diskIndex will be list with unique value,
+	 * 
+	 * @param diskIndex
+	 * @param memIndex
+	 */
 	private static void reducerMergeIndices(
 			ConcurrentHashMap<String, List<String>> diskIndex,
 			ConcurrentHashMap<String, String> memIndex) {
 
 		for (String word : memIndex.keySet()) {
 			String memPair = memIndex.get(word);
-			String memDoc = memPair.split(":")[0];
-			int memCnt = Integer.parseInt(memPair.split(":")[1]);
-
-			List<String> diskList = diskIndex.get(word);
-			int i;
-			for (i = 0; i < diskList.size(); i++) {
-				String diskPair = diskList.get(i);
-				String diskDoc = diskPair.split(":")[0];
-				int diskCnt = Integer.parseInt(diskPair.split(":")[1]);
-				if (diskDoc.compareTo(memDoc) == 0) {
-					diskList.set(i, memDoc + ":" + (diskCnt + memCnt));
-					break;
-				} else if (diskDoc.compareTo(memDoc) > 0) {
-					diskList.add(i, memPair);
-					break;
-				}
+			if (!diskIndex.containsKey(word)) {
+				List<String> pairList = new ArrayList<String>();
+				pairList.add(memPair);
+				diskIndex.put(word, pairList);
+			} else {
+				List<String> diskList = diskIndex.get(word);
+				diskList.add(memPair);
 			}
-			if (i == diskList.size())
-				diskList.add(i, memPair);
 		}
-
 	}
 	/*
 	 * private static List<String> merge(List<String> memList, List<String>
