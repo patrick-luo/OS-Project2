@@ -107,7 +107,27 @@ public class GoogleFileManager {
 	}
 
 	public static List<String[]> splitFile(String filePath, int mapperNum) {
-		return null;
+		List<String[]> tasks = new ArrayList<String[]>();
+		try {
+			GoogleFileManager gm = new GoogleFileManager(filePath, false);
+			long length = gm.length();
+			long interval = length / mapperNum;
+			long begin = 0;
+			for(int i = 0; i < mapperNum; i++){
+				String[] task;
+				if(i < mapperNum - 1)
+					task = new String[]{filePath, Long.toString(begin), Long.toString(begin + interval)};
+				else
+					task = new String[]{filePath, Long.toString(begin), Long.toString(length)};
+				tasks.add(task);
+				begin += interval;
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return tasks;
 	}
 
 	public static ConcurrentHashMap<String, List<String>> mapSearching(
