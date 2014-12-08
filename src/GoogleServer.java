@@ -135,6 +135,7 @@ public class GoogleServer extends Server {
 			else {
 				System.err.println("Please specify if you are searching or indexing");
 			}
+			Debug.println("Send reply to client, xid = " + xid);
 		}
 
 		private void receiveReplyFromHelper() throws IOException {
@@ -143,6 +144,7 @@ public class GoogleServer extends Server {
 				Message reply = chi.receive();
 				replyList.add(reply.content);
 				chi.closeSocket();
+				Debug.println("Done receiving result from helper #" + i + ", xid = " + xid);
 			}
 		}
 
@@ -202,7 +204,7 @@ public class GoogleServer extends Server {
 				task.port = siqi.getLocalPort(); // redirect port of receiving result to be siqi's port
 				chi.send(task);
 				chi.closeSocket();
-				Debug.println("Sent task to helper #" + i);
+				Debug.println("Sent task to helper #" + i + ", xid = " + xid);
 			}
 		}
 
