@@ -115,6 +115,7 @@ public class GoogleServer extends Server {
 				sendTaskToHelper();
 				receiveReplyFromHelper();
 				sendReplyToClient();
+				closeSocket();
 			}
 			catch (IOException e) {
 				e.printStackTrace();
