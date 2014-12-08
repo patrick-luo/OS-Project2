@@ -2,6 +2,8 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Helper extends Server {
 	private IPPort nameServer;
@@ -66,12 +68,12 @@ public class Helper extends Server {
 		public Object process(Message task) {
 			try {
 				if (task.type.equals("indexing")) {
-					doIndex(task); // begin indexing mapping task
+					doIndexMap(task); // begin indexing mapping task
 				}
 				else if (task.type.equals("searching")) {
 					doSearch(task); // begin searching mapping task
 				}
-				else if (task.type.equals("indexing_reducing")) {
+				else if (task.type.startsWith("indexing_reducing")) {
 					doIndexReduce(task); // begin indexing reducing task
 				}
 				else {
@@ -90,18 +92,31 @@ public class Helper extends Server {
 		 * 2. check if the list is full
 		 * 3. if full do reducing
 		 * 4. send ask to siqi
+		 * @throws IOException 
 		 */
-		private void doIndexReduce(Message task) {
+		private void doIndexReduce(Message task) throws IOException {
 			ArrayList<Message> reduceList = null;
 			synchronized (middleResult) {
 				ArrayList<Message> middle = middleResult.get(task.xid);
 				middle.add(task);
-				if (middle is full) 
+				int totalNumReduces = Integer.parseInt(task.type.split(":")[1]);
+				if (totalNumReduces == middle.size()) 
 					reduceList = middleResult.remove(task.xid);
 			}
-			if (reduceList != null)
+			if (reduceList != null) {
 				// do reducing here
+				List<ConcurrentHashMap<String, ConcurrentHashMap<String, String>>> reduceTasks
+				 = new ArrayList<ConcurrentHashMap<String,ConcurrentHashMap<String,String>>>();
+				for (Message m : reduceList) {
+					reduceTasks.add((ConcurrentHashMap<String, ConcurrentHashMap<String, String>>)m.content);
+				}
+				GoogleFileManager.reduceIndexing(reduceTasks);
+			}
 			// send ack to google here
+			initIO(new Socket(task.ip, task.port));
+			Message indexReply = generateMsg("index_reply", "success");
+			send(indexReply);
+			closeSocket();
 		}
 
 		/**
@@ -111,14 +126,37 @@ public class Helper extends Server {
 		 * 4. send middle result, xid, siqi, and numberOfHelpers to other helpers
 		 * @throws IOException 
 		 */
-		private void doIndex(Message task) throws IOException {
+		private void doIndexMap(Message task) throws IOException {
 			synchronized (middleResult) {
 				ArrayList<Message> middle = new ArrayList<Message>();
 				middleResult.put(task.xid, middle);
 			}
-			// generate middle result here
+			ConcurrentHashMap<String, ConcurrentHashMap<String, String>> indexingMiddleResult = GoogleFileManager.mapIndexing((String[])task.content);
 			ArrayList<IPPort> helperList = getHelperList();
-			// send middle results to other helpers here
+			List<ConcurrentHashMap<String, ConcurrentHashMap<String, String>>> copiesToSend = splitMiddleResult(indexingMiddleResult, helperList.size());
+			sendMiddleResult(task, helperList, copiesToSend);
+		}
+
+		private List<ConcurrentHashMap<String, ConcurrentHashMap<String, String>>> splitMiddleResult(
+				ConcurrentHashMap<String, ConcurrentHashMap<String, String>> indexingMiddleResult,
+				int size) { // criteria for splitting is to use 26 letters over numberOfHelpers
+			return null;
+		}
+
+		private void sendMiddleResult(
+				Message task, ArrayList<IPPort> helperList,
+				List<ConcurrentHashMap<String,ConcurrentHashMap<String,String>>> copiesToSend) throws IOException {
+			for (int i = 0; i < helperList.size(); i ++) {
+				IPPort helper = helperList.get(i);
+				ConcurrentHashMap<String,ConcurrentHashMap<String,String>> copy = copiesToSend.get(i);
+				initIO(new Socket(helper.ip, helper.port));
+				Message MsgToEachHelper = generateMsg("indexing_reducing:" + helperList.size(), copy);
+				MsgToEachHelper.xid = task.xid;
+				MsgToEachHelper.ip = task.ip;
+				MsgToEachHelper.port = task.port;
+				send(MsgToEachHelper);
+				closeSocket();
+			}
 		}
 
 		private ArrayList<IPPort> getHelperList() throws IOException {
@@ -134,9 +172,14 @@ public class Helper extends Server {
 		/**
 		 * 1. search the inverted indexes of given words
 		 * 2. return the search results to google's siqi
+		 * @throws IOException 
 		 */
-		private void doSearch(Message task) {
-			
+		private void doSearch(Message task) throws IOException {
+			ConcurrentHashMap<String, List<String>> result = GoogleFileManager.mapSearching((String[])task.content);
+			initIO(new Socket(task.ip, task.port));
+			Message searchReply = generateMsg("search_result", result);
+			send(searchReply);
+			closeSocket();
 		}
 		
 	}

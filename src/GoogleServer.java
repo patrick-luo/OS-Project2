@@ -149,18 +149,7 @@ public class GoogleServer extends Server {
 			String content = (String) request.content;
 			if (request.type.equals("indexing")) {
 				String filePath = content;
-				GoogleFileManager gfm = new GoogleFileManager(filePath);
-				long lengthOfFile = gfm.length();
-				for (int i = 0; i < helperList.size(); i ++)
-				
-				
-				String start = Long.toString(Long.MAX_VALUE);
-				String end = Long.toString(Long.MIN_VALUE);
-				String[] task = new String[3];
-				task[0] = fileName;
-				task[1] = start;
-				task[2] = end;
-				taskList.add(task);
+				taskList = (ArrayList<String[]>) GoogleFileManager.indexingSplit(filePath, helperList.size());
 			}
 			else if (request.type.equals("searching")) {
 				// Assumption: keywords are split by ';'
@@ -169,14 +158,21 @@ public class GoogleServer extends Server {
 				if (helperList.size() == 1)
 					taskList.add(wordList);
 				else {
-					int cnt = 0;
-					int numWord = (int)Math.ceil(wordList.length * 1.0 / helperList.size());
-					for (int i = 0; i < helperList.size(); i ++) {
+					int numPerHelper;
+					if (wordList.length % helperList.size() == 0) {
+						numPerHelper = wordList.length / helperList.size();
+					}
+					else {
+						int integer = wordList.length / helperList.size();
+						double decimal = wordList.length * 1.0 / helperList.size() - integer;
+						numPerHelper = decimal < 0.5 ? integer : integer + 1;
+					}
+					for (int i = 0, cnt = 0; i < helperList.size(); i ++) {
 						String[] task;
 						if (i != helperList.size() - 2) 
-							task = new String[numWord];
+							task = new String[numPerHelper];
 						else
-							task = new String[wordList.length - numWord * (helperList.size() - 1)];
+							task = new String[wordList.length - numPerHelper * (helperList.size() - 1)];
 		
 						for(int j = 0; j < task.length; j ++) {
 							task[j] = wordList[cnt ++];

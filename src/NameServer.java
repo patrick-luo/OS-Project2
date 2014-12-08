@@ -9,17 +9,14 @@ import java.util.HashMap;
 
 
 public class NameServer extends Server {
-	/** the address of the helper
-	 * Key: helper address, value: helper type: ready or not ready
-	 * */
-	private HashMap<IPPort, Boolean> helperList;
-	/** the address of the google server*/
+
+	private ArrayList<IPPort> helperList;
 	private IPPort googleServerAddress;
 	
 	public NameServer() throws IOException {
 		// initialize all fields
 		super(10);
-		helperList = new HashMap<IPPort, Boolean>();
+		helperList = new ArrayList<IPPort>();
 		googleServerAddress = null;
 		
 		//post its address
@@ -125,11 +122,8 @@ public class NameServer extends Server {
 					result = generateMsg(type, googleServerAddress);
 			}
 			else if (msg.content.equals("helper")) {
-				ArrayList<IPPort> helpers = new ArrayList<IPPort>();
-				for (IPPort key : helperList.keySet())
-					helpers.add(key);
-				result = generateMsg(type, helpers);
-				Debug.println("Returning " + helpers.size() + " helpers.");
+				result = generateMsg(type, helperList);
+				Debug.println("Returning " + helperList.size() + " helpers.");
 			}
 			send(result);
 		}
@@ -140,7 +134,7 @@ public class NameServer extends Server {
 			pair.ip = msg.ip;
 			pair.port = msg.port;
 			if(msg.toString().equals("helper"))
-				helperList.put(pair, true);
+				helperList.add(pair);
 			else if (msg.toString().equals("google"))
 				googleServerAddress = pair;
 			else {
