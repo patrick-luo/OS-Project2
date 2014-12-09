@@ -1,6 +1,8 @@
 import java.io.IOException;
+import java.net.ConnectException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -86,7 +88,7 @@ public class GoogleServer extends Server {
 		public void run() {
 			try {
 				request = receive();
-				Debug.println("Successfully receive a requst from one client");
+				Debug.println("Successfully receive a requst from one client, xid = " + xid);
 				process(request);
 				closeSocket();
 			} catch (IOException e) {
@@ -111,10 +113,15 @@ public class GoogleServer extends Server {
 		public Object process(Message request) {
 			try {
 				getHelperList();
-				splitTask();
-				sendTaskToHelper();
-				receiveReplyFromHelper();
-				sendReplyToClient();
+				boolean haveHelper = verifyHelperList();
+				if (haveHelper) {
+					splitTask();
+					sendTaskToHelper();
+					receiveReplyFromHelper();
+					sendReplyToClient(true);
+				}
+				else
+					sendReplyToClient(false);
 				closeSocket();
 			}
 			catch (IOException e) {
@@ -123,7 +130,50 @@ public class GoogleServer extends Server {
 			return null;
 		}
 
-		private void sendReplyToClient() throws IOException {
+		private boolean verifyHelperList() throws IOException {
+			Debug.println("Start verifying helpers...");
+			for (int i = 0; i < helperList.size(); i ++) {
+				Debug.print("Verifying helper #" + i + ": ");
+				IPPort helper = helperList.get(i);
+				Socket tryConnection = null;
+				try {
+					tryConnection = new Socket(helper.ip, helper.port);
+				}
+				catch (ConnectException e) {
+					Debug.println("Helper #" + i + " is dead, so remove it from NS.");
+					helperList.remove(i);
+					removeHelperFromNS(i);
+				}
+				if (tryConnection != null) {
+					chi = new Communicator(tryConnection);
+					chi.send(chi.generateMsg("verify", "google"));
+					chi.receive();
+					Debug.println("Helper #" + i + " is alive.");
+					chi.closeSocket();
+				}
+			}
+			if (helperList.size() == 0) {
+				Debug.println("No available helper.");
+				return false;
+			}
+				
+			else
+				return true;
+		}
+
+		private void removeHelperFromNS(Integer index) throws IOException {
+			chi = new Communicator(new Socket(nameServer.ip, nameServer.port));
+			chi.send(generateMsg("remove", index));
+			chi.closeSocket();
+		}
+
+		private void sendReplyToClient(boolean success) throws IOException {
+			if (!success) {
+				Debug.println("Send reply to client, xid = " + xid);
+				Message reply = generateMsg("reply", "Failure, no available helper.");
+				send(reply);
+				return;
+			}
 			if(request.type.equals("indexing")){
 				Message reply = generateMsg("reply", "indexing finished");
 				send(reply);

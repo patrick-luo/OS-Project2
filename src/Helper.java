@@ -47,11 +47,23 @@ public class Helper extends Server {
 		public void run() {
 			try {
 				Message task = receive();
-				closeSocket();
-				process(task);
+				if (task.type.equals("verify")) {
+					answerVerify(task); // answer verification of google
+					closeSocket();
+				}
+				else { // normal task
+					closeSocket();
+					process(task);
+				}
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
+
+		private void answerVerify(Message task) throws IOException {
+			send(generateMsg("answer_verify", "alive!"));
+			Debug.println("Answer verification: still alive!");
 		}
 
 		@Override
@@ -105,6 +117,7 @@ public class Helper extends Server {
 			}
 			if (reduceList != null) {
 				// do reducing here
+				Debug.println("Starting reducing..., xid = " + task.xid);
 				List<ConcurrentHashMap<String, String>> reduceTasks = 
 						new ArrayList<ConcurrentHashMap<String,String>>();
 				for (Message m : reduceList) {
@@ -118,7 +131,7 @@ public class Helper extends Server {
 			//	System.out.println("siqi port: " + task.port);
 				Message indexReply = generateMsg("index_reply", "success");
 				send(indexReply);
-				Debug.println("Send ACK to google server.");
+				Debug.println("Send ACK to google server, xid = " + task.xid);
 				closeSocket();
 			}
 			

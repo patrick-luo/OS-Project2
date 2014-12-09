@@ -105,10 +105,21 @@ public class NameServer extends Server {
 					e.printStackTrace();
 				}
 			}
+			else if (msg.type.equals("remove")) {
+				removeHelper(msg);
+			}
 			else
 				System.err.println("Please specify if you are to register or query!");
 			
 			return null;
+		}
+
+		private void removeHelper(Message msg) {
+			int helperIndex = (Integer) msg.content;
+			Debug.println("Remove one helper #" + helperIndex);
+			synchronized (helperList) {
+				helperList.remove(helperIndex);
+			}
 		}
 
 		private void query(Message msg) throws IOException {
@@ -122,8 +133,10 @@ public class NameServer extends Server {
 					result = generateMsg(type, googleServerAddress);
 			}
 			else if (msg.content.equals("helper")) {
-				result = generateMsg(type, helperList);
-				Debug.println("Returning " + helperList.size() + " helpers.");
+				synchronized (helperList) {
+					result = generateMsg(type, helperList);
+					Debug.println("Returning " + helperList.size() + " helpers.");
+				}
 			}
 			send(result);
 		}
@@ -133,15 +146,15 @@ public class NameServer extends Server {
 			IPPort pair = new IPPort();
 			pair.ip = msg.ip;
 			pair.port = msg.port;
-			if(msg.toString().equals("helper"))
+			if(msg.content.equals("helper"))
 				helperList.add(pair);
-			else if (msg.toString().equals("google"))
+			else if (msg.content.equals("google"))
 				googleServerAddress = pair;
 			else {
 				System.err.println("Please specify if you are helper or google to register!");
 				return;
 			}
-			Debug.println("NameServer: Register success! from " + pair.toString());
+			Debug.println("NameServer: " + msg.content + " register success! from " + pair.toString());
 		}
 	}
 	

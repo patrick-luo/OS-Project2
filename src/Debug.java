@@ -5,4 +5,7 @@ public class Debug {
 	public static void println(String str){
 		System.out.println("INFO " + infoCnt++ + ": " + str);
 	}
+	public static void print(String str){
+		System.out.print(str);
+	}
 }

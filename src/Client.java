@@ -53,7 +53,7 @@ public class Client implements Sender, Receiver {
 				+ " request to googleServer");
 
 		Message replyMsg = client.receive();
-		Debug.println("client: receives msg from google server "
+		Debug.println("client: receive from google: "
 				+ replyMsg.toString());
 		
 		client.closeSocket();
