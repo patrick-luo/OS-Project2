@@ -6,7 +6,10 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GoogleFileManager {
@@ -114,12 +117,14 @@ public class GoogleFileManager {
 			long length = gm.length();
 			long interval = length / mapperNum;
 			long begin = 0;
-			for(int i = 0; i < mapperNum; i++){
+			for (int i = 0; i < mapperNum; i++) {
 				String[] task;
-				if(i < mapperNum - 1)
-					task = new String[]{filePath, Long.toString(begin), Long.toString(begin + interval)};
+				if (i < mapperNum - 1)
+					task = new String[] { filePath, Long.toString(begin),
+							Long.toString(begin + interval) };
 				else
-					task = new String[]{filePath, Long.toString(begin), Long.toString(length)};
+					task = new String[] { filePath, Long.toString(begin),
+							Long.toString(length) };
 				tasks.add(task);
 				begin += interval;
 			}
@@ -127,7 +132,7 @@ public class GoogleFileManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return tasks;
 	}
 
@@ -135,11 +140,14 @@ public class GoogleFileManager {
 			String[] task) throws IOException {
 		ConcurrentHashMap<String, List<String>> invertedIndex = new ConcurrentHashMap<String, List<String>>();
 		for (String word : task) {
-			
-			if (word.length() < 2)
+
+			if (word.length() < 2) {
 				Debug.println("word too short");
+				continue;
+			}
 			word = word.toLowerCase();
-			ConcurrentHashMap<String, List<String>> bigIndex = reducerReadInvertedIndexFromFile(word.substring(0, 2));
+			ConcurrentHashMap<String, List<String>> bigIndex = reducerReadInvertedIndexFromFile(word
+					.substring(0, 2));
 			if (bigIndex.containsKey(word)) {
 				invertedIndex.put(word,
 						new ArrayList<String>(bigIndex.get(word)));
@@ -161,8 +169,8 @@ public class GoogleFileManager {
 			throws IOException {
 
 		ConcurrentHashMap<String, ConcurrentHashMap<String, String>> invertedIndicesLevelTwo = merge(invertedIndicesLevelOne);
-//		for(String filePath: invertedIndicesLevelTwo.keySet())
-//			Debug.println(filePath);
+		// for(String filePath: invertedIndicesLevelTwo.keySet())
+		// Debug.println(filePath);
 		// each
 		for (String filePath : invertedIndicesLevelTwo.keySet()) {
 
@@ -190,7 +198,8 @@ public class GoogleFileManager {
 				if (!twoLevelMap.containsKey(filekey)) {
 					twoLevelMap.put(filekey,
 							new ConcurrentHashMap<String, String>());
-					twoLevelMap.get(filekey).put(word, new String(oneLevelMap.get(word)));
+					twoLevelMap.get(filekey).put(word,
+							new String(oneLevelMap.get(word)));
 				} else {
 					if (!twoLevelMap.get(filekey).containsKey(word)) {
 						twoLevelMap.get(filekey).put(word,
@@ -212,14 +221,51 @@ public class GoogleFileManager {
 	public static ConcurrentHashMap<String, List<String>> reduceSearching(
 			List<ConcurrentHashMap<String, List<String>>> invertedIndices)
 			throws IOException {
-		 ConcurrentHashMap<String, List<String>> result = new  ConcurrentHashMap<String, List<String>> ();
-		 for( ConcurrentHashMap<String, List<String>> invertedIndex : invertedIndices){
-			 for(String key: invertedIndex.keySet()){
-				 result.put(key, invertedIndex.get(key));
-			 }
-		 }
-		 
-		 return result;
+		ConcurrentHashMap<String, List<String>> result = new ConcurrentHashMap<String, List<String>>();
+		for (ConcurrentHashMap<String, List<String>> invertedIndex : invertedIndices) {
+			for (String key : invertedIndex.keySet()) {
+				result.put(key, invertedIndex.get(key));
+			}
+		}
+
+		return result;
+	}
+
+	public static String[] pageRank(
+			ConcurrentHashMap<String, List<String>> invertedIndex, String[] keys) {
+		List<String> rank = new ArrayList<String>();
+		HashMap<String, Integer> documents = new HashMap<String, Integer>();
+		for (String word : invertedIndex.keySet()) {
+			List<String> list = invertedIndex.get(word);
+			for (String str : list) {
+				String doc = str.split(":")[0];
+				int cnt = Integer.parseInt(str.split(":")[1]);
+				if (documents.containsKey(doc))
+					documents.put(doc, documents.get(doc) + cnt);
+				else
+					documents.put(doc, cnt);
+			}
+		}
+		return sortDocuments(documents);
+	}
+
+	private static String[] sortDocuments(HashMap<String, Integer> documents) {
+		// TODO Auto-generated method stub
+		Set<String> keyset = documents.keySet();
+		String[] list = new String[keyset.size()];
+		int i = 0;
+		for(String key: keyset) list[i++] = key;
+		Quick.setStandard(documents);
+		Quick.sort(list);
+		printRankResult(list, documents);
+		return list;
+	}
+
+	private static void printRankResult(String[] list,
+			HashMap<String, Integer> documents) {
+		for (String doc : list) {
+			Debug.println(doc + "[" + documents.get(doc) + "]");
+		}
 	}
 
 	public static List<ConcurrentHashMap<String, String>> indexingSplit(
@@ -298,16 +344,19 @@ public class GoogleFileManager {
 				new String[] { "bible.txt" }, true);
 		List<ConcurrentHashMap<String, String>> booklist = new ArrayList<ConcurrentHashMap<String, String>>();
 		booklist.add(book);
-		//reduceIndexing(booklist);
-		ConcurrentHashMap<String, List<String>> interResult1 = mapSearching("what the hell is that".split(" "));
-		ConcurrentHashMap<String, List<String>> interResult2 = mapSearching("how are you is that".split(" "));
+		// reduceIndexing(booklist);
+		ConcurrentHashMap<String, List<String>> interResult1 = mapSearching("what the hell"
+				.split(" "));
+		ConcurrentHashMap<String, List<String>> interResult2 = mapSearching("how are you is that"
+				.split(" "));
 		List<ConcurrentHashMap<String, List<String>>> interResults = new ArrayList<ConcurrentHashMap<String, List<String>>>();
 		interResults.add(interResult1);
-		interResults.add(interResult2);
-		ConcurrentHashMap<String, List<String>> result =  reduceSearching(interResults);
-		for(String key: result.keySet()){
-			Debug.println(key + "=" + result.get(key) );
+		//interResults.add(interResult2);
+		ConcurrentHashMap<String, List<String>> result = reduceSearching(interResults);
+		for (String key : result.keySet()) {
+			Debug.println(key + "=" + result.get(key));
 		}
+		String[] rankedPages = pageRank(result, "what the hell".split(" "));
 	}
 
 	/**
@@ -408,24 +457,5 @@ public class GoogleFileManager {
 			}
 		}
 	}
-	/*
-	 * private static List<String> merge(List<String> memList, List<String>
-	 * diskList) { int m = memList.size(), n = diskList.size(); int i, j; if(m
-	 * == 0) return diskList; if(n == 0) return memList;
-	 * 
-	 * List<String> mergedList = new ArrayList<String>(); for(i = 0, j = 0; i <
-	 * m || j < n; ){ if(i >= m) mergedList.add(memList.get(i++)); else if(j >=
-	 * n) mergedList.add(diskList.get(j++)); else{ //i < m && j < n String pairi
-	 * = memList.get(i), pairj = diskList.get(j); String[] pair =
-	 * pairi.split(":"); String doci = pair[0]; int cnti =
-	 * Integer.parseInt(pair[1]); pair = pairj.split(":"); String docj =
-	 * pair[0]; int cntj = Integer.parseInt(pair[1]); if(doci.compareTo(docj) <
-	 * 0){ mergedList.add(pairi); i++; } else if(doci.compareTo(docj) > 0){
-	 * mergedList.add(pairj); j++; } else{ int cnt = cnti + cntj; String
-	 * mergedPair = doci + ":" + cnt; mergedList.add(mergedPair); i++; j++; } }
-	 * }
-	 * 
-	 * return mergedList; }
-	 */
 
 }

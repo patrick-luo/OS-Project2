@@ -133,7 +133,7 @@ public class GoogleServer extends Server {
 		private boolean verifyHelperList() throws IOException {
 			Debug.println("Start verifying helpers...");
 			for (int i = 0; i < helperList.size(); i ++) {
-				Debug.print("Verifying helper #" + i + ": ");
+				Debug.println("Verifying helper #" + i + ": ");
 				IPPort helper = helperList.get(i);
 				Socket tryConnection = null;
 				try {
