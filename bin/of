@@ -1,29 +1,65 @@
-offspring	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12
-offended	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25
-officer	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12
-offices	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5
-official	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3
-office	bible.txt:48	bible.txt:48	bible.txt:48	bible.txt:48	bible.txt:48	bible.txt:48	bible.txt:48	bible.txt:48	bible.txt:48
-offereth	bible.txt:15	bible.txt:15	bible.txt:15	bible.txt:15	bible.txt:15	bible.txt:15	bible.txt:15	bible.txt:15	bible.txt:15
-ofttimes	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3
-offer	bible.txt:236	bible.txt:236	bible.txt:236	bible.txt:236	bible.txt:236	bible.txt:236	bible.txt:236	bible.txt:236	bible.txt:236
-offence	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19
-offered	bible.txt:143	bible.txt:143	bible.txt:143	bible.txt:143	bible.txt:143	bible.txt:143	bible.txt:143	bible.txt:143	bible.txt:143
-offender	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-offences	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6
-of	bible.txt:34789	bible.txt:34789	bible.txt:34789	bible.txt:34789	bible.txt:34788	bible.txt:34788	bible.txt:34788	bible.txt:34788	bible.txt:34788
-offerings	bible.txt:265	bible.txt:265	bible.txt:265	bible.txt:265	bible.txt:265	bible.txt:265	bible.txt:265	bible.txt:265	bible.txt:265
-officers	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58
-offers	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-oftentimes	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6
-offscouring	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-off!	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-oftener	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-often	bible.txt:16	bible.txt:16	bible.txt:16	bible.txt:16	bible.txt:16	bible.txt:16	bible.txt:16	bible.txt:16	bible.txt:16
-of!	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-offenders	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-off	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505
-offering	bible.txt:724	bible.txt:724	bible.txt:724	bible.txt:724	bible.txt:724	bible.txt:724	bible.txt:724	bible.txt:724	bible.txt:724
-offend	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25
-oft	bible.txt:13	bible.txt:13	bible.txt:13	bible.txt:13	bible.txt:13	bible.txt:13	bible.txt:13	bible.txt:13	bible.txt:13
-offences!	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
+offhand	dict.txt:1
+offload	dict.txt:1
+officiousness	dict.txt:1
+officership	dict.txt:1
+offscouring	bible.txt:2
+officials	dict.txt:1
+offering	bible.txt:724	dict.txt:1
+offender	bible.txt:2	dict.txt:1
+officiate	dict.txt:1
+offices	bible.txt:5	dict.txt:1
+offenders	bible.txt:1	dict.txt:1
+offal	dict.txt:1
+offing	dict.txt:1
+often	bible.txt:16	dict.txt:1
+offending	dict.txt:1
+officer	bible.txt:12	dict.txt:1
+offertory	dict.txt:1
+off!	bible.txt:2
+offerings	bible.txt:265	dict.txt:1
+officially	dict.txt:1
+officiating	dict.txt:1
+offensively	dict.txt:1
+offers	bible.txt:1	dict.txt:1
+officialness	dict.txt:1
+of!	bible.txt:1
+off	bible.txt:505	dict.txt:1
+officers	bible.txt:58	dict.txt:1
+offshoot	dict.txt:1
+offspring	bible.txt:12	dict.txt:1
+officiously	dict.txt:1
+offshoots	dict.txt:1
+offloaded	dict.txt:1
+of	bible.txt:34789	dict.txt:1
+offences	bible.txt:6	dict.txt:1
+oftentimes	bible.txt:6	dict.txt:1
+offcuts	dict.txt:1
+officialdom	dict.txt:1
+official	bible.txt:3	dict.txt:1
+offended	bible.txt:25	dict.txt:1
+offside	dict.txt:1
+office	bible.txt:48	dict.txt:1
+offered	bible.txt:143	dict.txt:1
+offend	bible.txt:25	dict.txt:1
+offprint	dict.txt:1
+offset	dict.txt:1
+offensiveness	dict.txt:1
+offloading	dict.txt:1
+offsetting	dict.txt:1
+offensive	dict.txt:1
+officerships	dict.txt:1
+offbeat	dict.txt:1
+offensives	dict.txt:1
+offends	dict.txt:1
+offer	bible.txt:236	dict.txt:1
+offences!	bible.txt:1
+offence	bible.txt:19	dict.txt:1
+officious	dict.txt:1
+oft	bible.txt:13	dict.txt:1
+ofttimes	bible.txt:3
+offprints	dict.txt:1
+offsets	dict.txt:1
+offereth	bible.txt:15
+offshore	dict.txt:1
+oftener	bible.txt:1
+officiated	dict.txt:1

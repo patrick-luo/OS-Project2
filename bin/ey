@@ -1,10 +1,29 @@
-eye	bible.txt:116	bible.txt:116	bible.txt:116	bible.txt:116	bible.txt:116	bible.txt:116	bible.txt:116	bible.txt:116	bible.txt:116
-eyesight	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-eyebrows	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-eyewitnesses	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-eyeservice	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-eyes!	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-eyesalve	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-eyelids	bible.txt:9	bible.txt:9	bible.txt:9	bible.txt:9	bible.txt:9	bible.txt:9	bible.txt:9	bible.txt:9	bible.txt:9
-eyed	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-eyes	bible.txt:501	bible.txt:501	bible.txt:501	bible.txt:501	bible.txt:501	bible.txt:501	bible.txt:501	bible.txt:501	bible.txt:501
+eyeing	dict.txt:1
+eyes	bible.txt:501	dict.txt:1
+eyelet	dict.txt:1
+eyelashes	dict.txt:1
+eyepiece	dict.txt:1
+eye	bible.txt:116	dict.txt:1
+eyelids	bible.txt:9	dict.txt:1
+eyelash	dict.txt:1
+eyewitness	dict.txt:1
+eyeballs	dict.txt:1
+eyeservice	bible.txt:2
+eyewash	dict.txt:1
+eyeliner	dict.txt:1
+eyebrow	dict.txt:1
+eyeshadow	dict.txt:1
+eyelets	dict.txt:1
+eyesores	dict.txt:1
+eyeglass	dict.txt:1
+eyebrows	bible.txt:1	dict.txt:1
+eyed	bible.txt:2	dict.txt:1
+eyeball	dict.txt:1
+eyes!	bible.txt:1
+eyeglasses	dict.txt:1
+eyeless	dict.txt:1
+eyesore	dict.txt:1
+eyelid	dict.txt:1
+eyewitnesses	bible.txt:2	dict.txt:1
+eyesight	bible.txt:1	dict.txt:1
+eyesalve	bible.txt:1

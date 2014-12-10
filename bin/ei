@@ -1,8 +1,22 @@
-either	bible.txt:42	bible.txt:42	bible.txt:42	bible.txt:42	bible.txt:42	bible.txt:42	bible.txt:42	bible.txt:42	bible.txt:42
-eightieth	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-eighteen	bible.txt:22	bible.txt:22	bible.txt:22	bible.txt:22	bible.txt:22	bible.txt:22	bible.txt:22	bible.txt:22	bible.txt:22
-eighth	bible.txt:39	bible.txt:39	bible.txt:39	bible.txt:39	bible.txt:39	bible.txt:39	bible.txt:39	bible.txt:39	bible.txt:39
-eighty	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3
-ein	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-eighteenth	bible.txt:11	bible.txt:11	bible.txt:11	bible.txt:11	bible.txt:11	bible.txt:11	bible.txt:11	bible.txt:11	bible.txt:11
-eight	bible.txt:80	bible.txt:80	bible.txt:80	bible.txt:80	bible.txt:80	bible.txt:80	bible.txt:80	bible.txt:80	bible.txt:80
+eighteen	bible.txt:22	dict.txt:1
+eigenvalue	dict.txt:1
+eigenvalues	dict.txt:1
+eigenstate	dict.txt:1
+eightieth	bible.txt:1	dict.txt:1
+eigenfunctions	dict.txt:1
+eisteddfod	dict.txt:1
+eigenstates	dict.txt:1
+eiderdown	dict.txt:1
+eightpence	dict.txt:1
+eights	dict.txt:1
+eighty	bible.txt:3	dict.txt:1
+either	bible.txt:42	dict.txt:1
+eighteenth	bible.txt:11	dict.txt:1
+eight	bible.txt:80	dict.txt:1
+eighties	dict.txt:1
+eightfold	dict.txt:1
+eider	dict.txt:1
+eighth	bible.txt:39	dict.txt:1
+eigenfunction	dict.txt:1
+ein	bible.txt:1
+eidetic	dict.txt:1

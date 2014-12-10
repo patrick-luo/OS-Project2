@@ -1,12 +1,23 @@
-dwelt	bible.txt:225	bible.txt:225	bible.txt:225	bible.txt:225	bible.txt:225	bible.txt:225	bible.txt:225	bible.txt:225	bible.txt:225
-dwelt!	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-dwellings	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17
-dwelling	bible.txt:52	bible.txt:52	bible.txt:52	bible.txt:52	bible.txt:52	bible.txt:52	bible.txt:52	bible.txt:52	bible.txt:52
-dwell	bible.txt:338	bible.txt:338	bible.txt:338	bible.txt:338	bible.txt:338	bible.txt:338	bible.txt:338	bible.txt:338	bible.txt:338
-dwellers	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3
-dwellest	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19	bible.txt:19
-dwelled	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6
-dwellingplaces	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5
-dwellingplace	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3
-dwarf	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-dwelleth	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58	bible.txt:58
+dwellers	bible.txt:3	dict.txt:1
+dwindling	dict.txt:1
+dwellings	bible.txt:17	dict.txt:1
+dwarf	bible.txt:1	dict.txt:1
+dwellingplaces	bible.txt:5
+dwelt!	bible.txt:1
+dwarves	dict.txt:1
+dwindled	dict.txt:1
+dwelled	bible.txt:6
+dwarfed	dict.txt:1
+dwell	bible.txt:338	dict.txt:1
+dwarfish	dict.txt:1
+dwellingplace	bible.txt:3
+dwarfs	dict.txt:1
+dwells	dict.txt:1
+dwindles	dict.txt:1
+dwelleth	bible.txt:58
+dweller	dict.txt:1
+dwelling	bible.txt:52	dict.txt:1
+dwarfing	dict.txt:1
+dwindle	dict.txt:1
+dwellest	bible.txt:19
+dwelt	bible.txt:225	dict.txt:1

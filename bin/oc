@@ -1,11 +1,66 @@
-occasion	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21
-occupieth	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-ocran	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5
-occupation	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5
-occupy	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-occur	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-occurrent	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-occasions	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3
-occupiers	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-occasioned	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-occupied	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7
+occupant	dict.txt:1
+occupations	dict.txt:1
+ocular	dict.txt:1
+octant	dict.txt:1
+octopuses	dict.txt:1
+occupation	bible.txt:5	dict.txt:1
+octal	dict.txt:1
+octahedron	dict.txt:1
+octogenarian	dict.txt:1
+octets	dict.txt:1
+ochre	dict.txt:1
+occasioned	bible.txt:1	dict.txt:1
+occludes	dict.txt:1
+occur	bible.txt:1	dict.txt:1
+occlusion	dict.txt:1
+occupancy	dict.txt:1
+oceans	dict.txt:1
+octopus	dict.txt:1
+oceanographer	dict.txt:1
+ocelot	dict.txt:1
+oceanography	dict.txt:1
+occurred	dict.txt:1
+oceanic	dict.txt:1
+occupy	bible.txt:2	dict.txt:1
+oceanographers	dict.txt:1
+occults	dict.txt:1
+occultism	dict.txt:1
+octane	dict.txt:1
+octavo	dict.txt:1
+octagonal	dict.txt:1
+octet	dict.txt:1
+occupies	dict.txt:1
+ocean	dict.txt:1
+oceanographic	dict.txt:1
+occupants	dict.txt:1
+occupancies	dict.txt:1
+occurrences	dict.txt:1
+octaves	dict.txt:1
+occasionally	dict.txt:1
+occupational	dict.txt:1
+occupationally	dict.txt:1
+occasional	dict.txt:1
+occupier	dict.txt:1
+octahedral	dict.txt:1
+occurrent	bible.txt:1
+occupiers	bible.txt:1	dict.txt:1
+occidental	dict.txt:1
+occurs	dict.txt:1
+octagons	dict.txt:1
+ochres	dict.txt:1
+octave	dict.txt:1
+occult	dict.txt:1
+occasioning	dict.txt:1
+occluded	dict.txt:1
+occipital	dict.txt:1
+occasion	bible.txt:21	dict.txt:1
+occasions	bible.txt:3	dict.txt:1
+octogenarians	dict.txt:1
+occupied	bible.txt:7	dict.txt:1
+occupieth	bible.txt:1
+occupying	dict.txt:1
+ocran	bible.txt:5
+octagon	dict.txt:1
+occurrence	dict.txt:1
+occurring	dict.txt:1
+oculist	dict.txt:1

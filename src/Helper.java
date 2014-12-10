@@ -152,8 +152,10 @@ public class Helper extends Server {
 			ConcurrentHashMap<String, String> indexingMiddleResult = 
 					GoogleFileManager.mapIndexing((String[])task.content, false);
 			ArrayList<IPPort> helperList = getHelperList();
+			Debug.println("Shuffle the middle result..., xid = " + task.xid);
 			List<ConcurrentHashMap<String, String>> copiesToSend = 
 					GoogleFileManager.indexingSplit(indexingMiddleResult, helperList.size());
+			Debug.println("Sending to reducers..., xid = " + task.xid);
 			sendMiddleResult(task, helperList, copiesToSend);
 			Debug.println("Done mapping, xid = " + task.xid);
 		}
@@ -190,6 +192,7 @@ public class Helper extends Server {
 		 * @throws IOException 
 		 */
 		private void doSearch(Message task) throws IOException {
+			Debug.println("Get a search task, xid = " + task.xid);
 			ConcurrentHashMap<String, List<String>> result = GoogleFileManager.mapSearching((String[])task.content);
 			initIO(new Socket(task.ip, task.port));
 			Message searchReply = generateMsg("search_result", result);

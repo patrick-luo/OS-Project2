@@ -115,10 +115,10 @@ public class NameServer extends Server {
 		}
 
 		private void removeHelper(Message msg) {
-			int helperIndex = (Integer) msg.content;
-			Debug.println("Remove one helper #" + helperIndex);
+			IPPort helper = (IPPort) msg.content;
+			Debug.println("Remove one helper #" + helper.toString());
 			synchronized (helperList) {
-				helperList.remove(helperIndex);
+				helperList.remove(helper);
 			}
 		}
 

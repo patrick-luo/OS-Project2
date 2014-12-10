@@ -1,20 +1,126 @@
-voice	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505	bible.txt:505
-vows	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30
-void	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25
-vomited	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-vomiteth	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-vowest	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-voices	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17	bible.txt:17
-voluntarily	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-vophsi	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-volunteers	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6
-vomit	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8
-vowed	bible.txt:18	bible.txt:18	bible.txt:18	bible.txt:18	bible.txt:18	bible.txt:18	bible.txt:18	bible.txt:18	bible.txt:18
-voyage	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-volume	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-vocation	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-volunteer	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-voweth	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-voluntary	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4
-vowedst	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-vow	bible.txt:41	bible.txt:41	bible.txt:41	bible.txt:41	bible.txt:41	bible.txt:41	bible.txt:41	bible.txt:41	bible.txt:41
+voluntarily	bible.txt:1	dict.txt:1
+vowed	bible.txt:18	dict.txt:1
+vortices	dict.txt:1
+volcano	dict.txt:1
+voicings	dict.txt:1
+vomit	bible.txt:8	dict.txt:1
+volunteer	bible.txt:1	dict.txt:1
+vocalizing	dict.txt:1
+voiced	dict.txt:1
+vocabulary	dict.txt:1
+void	bible.txt:25	dict.txt:1
+vocalizations	dict.txt:1
+voidable	dict.txt:1
+vocals	dict.txt:1
+volubility	dict.txt:1
+voweth	bible.txt:1
+vouchsafe	dict.txt:1
+vocalization	dict.txt:1
+vote	dict.txt:1
+volatility	dict.txt:1
+volley	dict.txt:1
+volunteers	bible.txt:6	dict.txt:1
+vocalized	dict.txt:1
+vocalisations	dict.txt:1
+volunteering	dict.txt:1
+voltage	dict.txt:1
+votive	dict.txt:1
+vocal	dict.txt:1
+volatile	dict.txt:1
+vocabularies	dict.txt:1
+voracity	dict.txt:1
+vouched	dict.txt:1
+volatiles	dict.txt:1
+volubly	dict.txt:1
+voile	dict.txt:1
+volcanic	dict.txt:1
+voucher	dict.txt:1
+vorticity	dict.txt:1
+vouches	dict.txt:1
+volleyed	dict.txt:1
+volition	dict.txt:1
+vocationally	dict.txt:1
+vowest	bible.txt:2
+voice	bible.txt:505	dict.txt:1
+volcanically	dict.txt:1
+voids	dict.txt:1
+voraciously	dict.txt:1
+voluminous	dict.txt:1
+vocations	dict.txt:1
+vocalize	dict.txt:1
+volume	bible.txt:2	dict.txt:1
+voting	dict.txt:1
+vocative	dict.txt:1
+voyage	bible.txt:1	dict.txt:1
+voe	dict.txt:1
+volcanism	dict.txt:1
+voluntary	bible.txt:4	dict.txt:1
+vocational	dict.txt:1
+vowel	dict.txt:1
+volt	dict.txt:1
+volumes	dict.txt:1
+vocalisation	dict.txt:1
+vomiteth	bible.txt:1
+voltages	dict.txt:1
+vogue	dict.txt:1
+vowedst	bible.txt:1
+vouch	dict.txt:1
+vortexes	dict.txt:1
+vocalist	dict.txt:1
+vodka	dict.txt:1
+vole	dict.txt:1
+vophsi	bible.txt:1
+vouchsafing	dict.txt:1
+vomited	bible.txt:1	dict.txt:1
+volumetric	dict.txt:1
+voodoo	dict.txt:1
+vocalising	dict.txt:1
+vomiting	dict.txt:1
+voltmeter	dict.txt:1
+vowels	dict.txt:1
+vows	bible.txt:30	dict.txt:1
+voluptuous	dict.txt:1
+voters	dict.txt:1
+voyaged	dict.txt:1
+voided	dict.txt:1
+volunteered	dict.txt:1
+voluptuously	dict.txt:1
+vowing	dict.txt:1
+voyagers	dict.txt:1
+voiding	dict.txt:1
+volleys	dict.txt:1
+voes	dict.txt:1
+vociferous	dict.txt:1
+vocally	dict.txt:1
+voyeurism	dict.txt:1
+vortex	dict.txt:1
+voyages	dict.txt:1
+voyeur	dict.txt:1
+vocation	bible.txt:1	dict.txt:1
+voyaging	dict.txt:1
+voracious	dict.txt:1
+voles	dict.txt:1
+vocalists	dict.txt:1
+voices	bible.txt:17	dict.txt:1
+vouchsafed	dict.txt:1
+voyager	dict.txt:1
+voluptuousness	dict.txt:1
+vocalised	dict.txt:1
+voter	dict.txt:1
+vodkas	dict.txt:1
+volts	dict.txt:1
+voted	dict.txt:1
+vow	bible.txt:41	dict.txt:1
+vomits	dict.txt:1
+voyeuristic	dict.txt:1
+vocalise	dict.txt:1
+voyeurs	dict.txt:1
+vouchers	dict.txt:1
+voiceless	dict.txt:1
+volleying	dict.txt:1
+vociferously	dict.txt:1
+voluble	dict.txt:1
+volcanoes	dict.txt:1
+voicing	dict.txt:1
+volleyball	dict.txt:1
+votes	dict.txt:1

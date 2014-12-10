@@ -1,26 +1,178 @@
-gur	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-guiding	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-guard	bible.txt:51	bible.txt:51	bible.txt:51	bible.txt:51	bible.txt:51	bible.txt:51	bible.txt:51	bible.txt:51	bible.txt:51
-guile!	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-gushed	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5
-guided	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5
-guestchamber	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-gunites	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-guides	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-gurbaal	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-guile	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10
-gulf	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-gutters	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-guni	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4
-guiltless	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10
-guide	bible.txt:23	bible.txt:23	bible.txt:23	bible.txt:23	bible.txt:23	bible.txt:23	bible.txt:23	bible.txt:23	bible.txt:23
-guiltiness	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-guilt	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-gutenberg-tm	bible.txt:57	bible.txt:57	bible.txt:57	bible.txt:57	bible.txt:57	bible.txt:57	bible.txt:57	bible.txt:57	bible.txt:57
-gutter	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-guilty	bible.txt:26	bible.txt:26	bible.txt:26	bible.txt:26	bible.txt:26	bible.txt:26	bible.txt:26	bible.txt:26	bible.txt:26
-gush	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-guests	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6
-guest	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-gudgodah	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-gutenberg	bible.txt:37	bible.txt:37	bible.txt:37	bible.txt:37	bible.txt:37	bible.txt:37	bible.txt:37	bible.txt:37	bible.txt:37
+gusto	dict.txt:1
+guarantor	dict.txt:1
+guides	bible.txt:2	dict.txt:1
+gusset	dict.txt:1
+guillemots	dict.txt:1
+gunman	dict.txt:1
+guaranteeing	dict.txt:1
+guano	dict.txt:1
+guardsman	dict.txt:1
+guerrilla	dict.txt:1
+guillotines	dict.txt:1
+guild	dict.txt:1
+guppies	dict.txt:1
+gunnery	dict.txt:1
+guided	bible.txt:5	dict.txt:1
+gut	dict.txt:1
+gunfire	dict.txt:1
+guttered	dict.txt:1
+guidance	dict.txt:1
+guacamole	dict.txt:1
+gully	dict.txt:1
+gunners	dict.txt:1
+guards	dict.txt:1
+gunwales	dict.txt:1
+guiders	dict.txt:1
+guilty	bible.txt:26	dict.txt:1
+gulped	dict.txt:1
+guttural	dict.txt:1
+gutturally	dict.txt:1
+gusted	dict.txt:1
+gunfight	dict.txt:1
+gudgodah	bible.txt:2
+gurgles	dict.txt:1
+gunboat	dict.txt:1
+gullible	dict.txt:1
+gustiest	dict.txt:1
+guile	bible.txt:10	dict.txt:1
+guide	bible.txt:23	dict.txt:1
+guilds	dict.txt:1
+guineas	dict.txt:1
+guillemot	dict.txt:1
+guns	dict.txt:1
+guarding	dict.txt:1
+guardians	dict.txt:1
+gun	dict.txt:1
+gubernatorial	dict.txt:1
+gutting	dict.txt:1
+guzzler	dict.txt:1
+gurbaal	bible.txt:1
+gunshot	dict.txt:1
+gusting	dict.txt:1
+gutsy	dict.txt:1
+guess	dict.txt:1
+guitar	dict.txt:1
+guardianship	dict.txt:1
+gulping	dict.txt:1
+guessed	dict.txt:1
+guises	dict.txt:1
+gutenberg	bible.txt:37
+gulley	dict.txt:1
+gunmetal	dict.txt:1
+gust	dict.txt:1
+gulf	bible.txt:1	dict.txt:1
+guile!	bible.txt:1
+guarantee	dict.txt:1
+gusts	dict.txt:1
+guitarist	dict.txt:1
+guitars	dict.txt:1
+gushing	dict.txt:1
+guardhouse	dict.txt:1
+gunning	dict.txt:1
+gumshoe	dict.txt:1
+guzzlers	dict.txt:1
+gurus	dict.txt:1
+gunpoint	dict.txt:1
+guard	bible.txt:51	dict.txt:1
+gunships	dict.txt:1
+guzzled	dict.txt:1
+gullets	dict.txt:1
+guileless	dict.txt:1
+gumtrees	dict.txt:1
+guffaws	dict.txt:1
+guarantors	dict.txt:1
+guru	dict.txt:1
+gudgeon	dict.txt:1
+guerilla	dict.txt:1
+guava	dict.txt:1
+gulfs	dict.txt:1
+gutenberg-tm	bible.txt:57
+gunshots	dict.txt:1
+gulls	dict.txt:1
+guilders	dict.txt:1
+guardedness	dict.txt:1
+guidelines	dict.txt:1
+gunpowder	dict.txt:1
+gushed	bible.txt:5	dict.txt:1
+guillotine	dict.txt:1
+gum	dict.txt:1
+guillotined	dict.txt:1
+guffaw	dict.txt:1
+gunsmiths	dict.txt:1
+guideline	dict.txt:1
+guesses	dict.txt:1
+gushes	dict.txt:1
+guanine	dict.txt:1
+guffawed	dict.txt:1
+guttersnipe	dict.txt:1
+guiltiness	bible.txt:1	dict.txt:1
+gurgle	dict.txt:1
+guerillas	dict.txt:1
+gulleys	dict.txt:1
+gullies	dict.txt:1
+guiltless	bible.txt:10	dict.txt:1
+guts	dict.txt:1
+guessable	dict.txt:1
+guidebooks	dict.txt:1
+gunsmith	dict.txt:1
+guardian	dict.txt:1
+gullet	dict.txt:1
+guest	bible.txt:1	dict.txt:1
+gutter	bible.txt:1	dict.txt:1
+guilt	bible.txt:2	dict.txt:1
+guiltily	dict.txt:1
+gulps	dict.txt:1
+guzzle	dict.txt:1
+guilelessness	dict.txt:1
+guaranteed	dict.txt:1
+gums	dict.txt:1
+guy	dict.txt:1
+gustier	dict.txt:1
+guinea	dict.txt:1
+guests	bible.txt:6	dict.txt:1
+gumtree	dict.txt:1
+guiltier	dict.txt:1
+guessing	dict.txt:1
+gull	dict.txt:1
+gusher	dict.txt:1
+gurgling	dict.txt:1
+gusty	dict.txt:1
+gutters	bible.txt:2	dict.txt:1
+gunboats	dict.txt:1
+guarantees	dict.txt:1
+gutted	dict.txt:1
+guestchamber	bible.txt:2
+guiltiest	dict.txt:1
+gumming	dict.txt:1
+guys	dict.txt:1
+gunned	dict.txt:1
+guarded	dict.txt:1
+guesswork	dict.txt:1
+guttering	dict.txt:1
+gunmen	dict.txt:1
+guerrillas	dict.txt:1
+gunites	bible.txt:1
+guardroom	dict.txt:1
+guni	bible.txt:4
+guzzling	dict.txt:1
+guise	dict.txt:1
+guttersnipes	dict.txt:1
+guidebook	dict.txt:1
+gullibility	dict.txt:1
+gummed	dict.txt:1
+gush	bible.txt:1	dict.txt:1
+guesting	dict.txt:1
+gunship	dict.txt:1
+gulp	dict.txt:1
+gunner	dict.txt:1
+gurgled	dict.txt:1
+gunwale	dict.txt:1
+guitarists	dict.txt:1
+guider	dict.txt:1
+guillotining	dict.txt:1
+guardsmen	dict.txt:1
+guiding	bible.txt:1	dict.txt:1
+guardedly	dict.txt:1
+gumboots	dict.txt:1
+guppy	dict.txt:1
+gur	bible.txt:1

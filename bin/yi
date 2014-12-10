@@ -1,4 +1,6 @@
-yielding	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7
-yield	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30	bible.txt:30
-yieldeth	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4
-yielded	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8	bible.txt:8
+yielding	bible.txt:7	dict.txt:1
+yieldeth	bible.txt:4
+yippee	dict.txt:1
+yield	bible.txt:30	dict.txt:1
+yields	dict.txt:1
+yielded	bible.txt:8	dict.txt:1

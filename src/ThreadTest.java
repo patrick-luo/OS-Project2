@@ -1,3 +1,5 @@
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -17,9 +19,12 @@ public class ThreadTest {
 	public ThreadTest() {
 		runDude();
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnknownHostException {
 		// TODO Auto-generated method stub
-		ThreadTest t = new ThreadTest();
+	//	ThreadTest t = new ThreadTest();
+		InetAddress ip1 = InetAddress.getLocalHost();
+		InetAddress ip2 = InetAddress.getLocalHost();
+		System.out.println(ip1.equals(ip2));
 	}
 
 }

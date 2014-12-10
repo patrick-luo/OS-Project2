@@ -35,7 +35,7 @@ public abstract class Server {
 	/**
 	 * register itself to NameServer and return the (IP, Port) of NameServer
 	 */
-	public IPPort register(String content) throws UnknownHostException, IOException {
+	public IPPort register(String content) throws IOException {
 		IPPort nameServer = getNameServer();
 		Socket clientSocket = new Socket(nameServer.ip, nameServer.port);
 		RegisterDude dude = new RegisterDude(clientSocket, content);
@@ -43,13 +43,13 @@ public abstract class Server {
 		return nameServer;
 	}
 	
-	private IPPort getNameServer() throws UnknownHostException, IOException {
+	private IPPort getNameServer() throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader reader = new BufferedReader
 				(new InputStreamReader(new FileInputStream("Announcement.txt"), "UTF-8"));
 		IPPort pair = new IPPort();
 		pair.ip = InetAddress.getByName(reader.readLine());
-		pair.ip = InetAddress.getByName("localhost");
+	//	pair.ip = InetAddress.getByName("localhost");
 		pair.port = Integer.parseInt(reader.readLine());
 		reader.close();
 		return pair;

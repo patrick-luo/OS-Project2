@@ -1,4 +1,18 @@
-oil	bible.txt:202	bible.txt:202	bible.txt:202	bible.txt:202	bible.txt:202	bible.txt:202	bible.txt:202	bible.txt:202	bible.txt:202
-ointments	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5
-ointment	bible.txt:27	bible.txt:27	bible.txt:27	bible.txt:27	bible.txt:27	bible.txt:27	bible.txt:27	bible.txt:27	bible.txt:27
-oiled	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
+oiled	bible.txt:2	dict.txt:1
+oilskin	dict.txt:1
+oilfields	dict.txt:1
+ointment	bible.txt:27	dict.txt:1
+oil	bible.txt:202	dict.txt:1
+ointments	bible.txt:5	dict.txt:1
+oilcloth	dict.txt:1
+oilman	dict.txt:1
+oiling	dict.txt:1
+oiliness	dict.txt:1
+oils	dict.txt:1
+oilier	dict.txt:1
+oilfield	dict.txt:1
+oilseed	dict.txt:1
+oilmen	dict.txt:1
+oiliest	dict.txt:1
+oily	dict.txt:1
+oilskins	dict.txt:1

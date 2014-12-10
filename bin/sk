@@ -1,15 +1,127 @@
-sky	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7
-skilfully	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-skin	bible.txt:77	bible.txt:77	bible.txt:77	bible.txt:77	bible.txt:77	bible.txt:77	bible.txt:77	bible.txt:77	bible.txt:77
-skip	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-skipped	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-skins	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24
-skirts	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7
-skippedst	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-skirt	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12	bible.txt:12
-skill	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7
-skies	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5
-skull	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5	bible.txt:5
-skipping	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-skilfulness	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-skilful	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7
+sketching	dict.txt:1
+skyscraper	dict.txt:1
+skulks	dict.txt:1
+skidded	dict.txt:1
+skits	dict.txt:1
+skimping	dict.txt:1
+skinners	dict.txt:1
+skimming	dict.txt:1
+skit	dict.txt:1
+ski	dict.txt:1
+skilfulness	bible.txt:1
+skillet	dict.txt:1
+skydiving	dict.txt:1
+skunks	dict.txt:1
+skates	dict.txt:1
+skirts	bible.txt:7	dict.txt:1
+sketchbooks	dict.txt:1
+skyscrapers	dict.txt:1
+skittishly	dict.txt:1
+skittle	dict.txt:1
+skull	bible.txt:5	dict.txt:1
+skirl	dict.txt:1
+skimmed	dict.txt:1
+skippers	dict.txt:1
+skiing	dict.txt:1
+sketches	dict.txt:1
+sketchbook	dict.txt:1
+skeletons	dict.txt:1
+skintight	dict.txt:1
+sketchiest	dict.txt:1
+skippered	dict.txt:1
+skulk	dict.txt:1
+skinniest	dict.txt:1
+skeletal	dict.txt:1
+skywards	dict.txt:1
+skullduggery	dict.txt:1
+skewed	dict.txt:1
+skill	bible.txt:7	dict.txt:1
+skipper	dict.txt:1
+skein	dict.txt:1
+skinner	dict.txt:1
+skimp	dict.txt:1
+sketchpad	dict.txt:1
+skateboard	dict.txt:1
+skippering	dict.txt:1
+skinheads	dict.txt:1
+skateboards	dict.txt:1
+skewer	dict.txt:1
+skilful	bible.txt:7	dict.txt:1
+skims	dict.txt:1
+skated	dict.txt:1
+skippedst	bible.txt:1
+skullcap	dict.txt:1
+skylights	dict.txt:1
+skulls	dict.txt:1
+skirting	dict.txt:1
+skewness	dict.txt:1
+skaters	dict.txt:1
+sketchily	dict.txt:1
+skydivers	dict.txt:1
+skydived	dict.txt:1
+skips	dict.txt:1
+skip	bible.txt:1	dict.txt:1
+skimpy	dict.txt:1
+skidding	dict.txt:1
+skews	dict.txt:1
+skipped	bible.txt:2	dict.txt:1
+skiers	dict.txt:1
+skimped	dict.txt:1
+skim	dict.txt:1
+skulked	dict.txt:1
+skins	bible.txt:24	dict.txt:1
+skerries	dict.txt:1
+skilled	dict.txt:1
+skeleton	dict.txt:1
+skinhead	dict.txt:1
+skylarks	dict.txt:1
+skittishness	dict.txt:1
+skittles	dict.txt:1
+skimmer	dict.txt:1
+skulking	dict.txt:1
+skuas	dict.txt:1
+skate	dict.txt:1
+skincare	dict.txt:1
+skis	dict.txt:1
+skew	dict.txt:1
+skies	bible.txt:5	dict.txt:1
+skylark	dict.txt:1
+skirmishes	dict.txt:1
+skewered	dict.txt:1
+skin	bible.txt:77	dict.txt:1
+skydives	dict.txt:1
+skating	dict.txt:1
+skylight	dict.txt:1
+skinny	dict.txt:1
+skylines	dict.txt:1
+skyward	dict.txt:1
+skinnier	dict.txt:1
+skied	dict.txt:1
+skier	dict.txt:1
+sky	bible.txt:7	dict.txt:1
+skua	dict.txt:1
+skewers	dict.txt:1
+skyline	dict.txt:1
+skirt	bible.txt:12	dict.txt:1
+sketch	dict.txt:1
+skinflint	dict.txt:1
+sketched	dict.txt:1
+skirted	dict.txt:1
+skid	dict.txt:1
+sketchy	dict.txt:1
+skunk	dict.txt:1
+skittish	dict.txt:1
+skydiver	dict.txt:1
+skilfully	bible.txt:1	dict.txt:1
+sketchier	dict.txt:1
+skids	dict.txt:1
+skinned	dict.txt:1
+skipping	bible.txt:1	dict.txt:1
+skirmish	dict.txt:1
+skydive	dict.txt:1
+skulduggery	dict.txt:1
+skinless	dict.txt:1
+skills	dict.txt:1
+skirmishing	dict.txt:1
+skater	dict.txt:1
+skinning	dict.txt:1

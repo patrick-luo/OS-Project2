@@ -5,7 +5,9 @@ import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class GoogleServer extends Server {
 	private IPPort nameServer;
@@ -80,7 +82,7 @@ public class GoogleServer extends Server {
 			this.xid = xid;
 			chi = null;
 			siqi = new ServerSocket(0);
-			taskList = null;
+			taskList = new ArrayList<String[]>();
 			helperList = null;
 			replyList = new ArrayList<Object>();
 		}
@@ -142,7 +144,7 @@ public class GoogleServer extends Server {
 				catch (ConnectException e) {
 					Debug.println("Helper #" + i + " is dead, so remove it from NS.");
 					helperList.remove(i);
-					removeHelperFromNS(i);
+					removeHelperFromNS(helper);
 				}
 				if (tryConnection != null) {
 					chi = new Communicator(tryConnection);
@@ -161,9 +163,9 @@ public class GoogleServer extends Server {
 				return true;
 		}
 
-		private void removeHelperFromNS(Integer index) throws IOException {
+		private void removeHelperFromNS(IPPort helper) throws IOException {
 			chi = new Communicator(new Socket(nameServer.ip, nameServer.port));
-			chi.send(generateMsg("remove", index));
+			chi.send(generateMsg("remove", helper));
 			chi.closeSocket();
 		}
 
@@ -175,11 +177,19 @@ public class GoogleServer extends Server {
 				return;
 			}
 			if(request.type.equals("indexing")){
-				Message reply = generateMsg("reply", "indexing finished");
+				Message reply = generateMsg("indexing", "indexing finished");
 				send(reply);
 			}
 			else if(request.type.equals("searching")){
-				Message reply = generateMsg("reply", "searching finished");
+				List<ConcurrentHashMap<String, List<String>>> smallHashList =
+						new ArrayList<ConcurrentHashMap<String,List<String>>>();
+				for (Object smallHash : replyList) {
+					smallHashList.add((ConcurrentHashMap<String, List<String>>)smallHash);
+				}
+				String[] searchKeys = (String[]) request.content;
+				String[] rankedResult = GoogleFileManager.pageRank(
+						GoogleFileManager.reduceSearching(smallHashList), searchKeys);
+				Message reply = generateMsg("searching", rankedResult);
 				send(reply);
 			}
 			else {
@@ -189,29 +199,25 @@ public class GoogleServer extends Server {
 		}
 
 		private void receiveReplyFromHelper() throws IOException {
-		//	System.out.println("siqi port: " + siqi.getLocalPort());
 			for(int i = 0; i < helperList.size(); i ++) {
 				chi = new Communicator(siqi.accept());
-			//	System.out.println("Here 2");
 				Message reply = chi.receive();
-			//	System.out.println("Here 3");
 				replyList.add(reply.content);
-			//	System.out.println("Here 4");
 				chi.closeSocket();
 				Debug.println("Done receiving result from helper #" + i + ", xid = " + xid);
 			}
-		//	System.out.println("Here");
 		}
 
 		private void splitTask() {
-			String content = (String) request.content;
+			String[] content = (String[]) request.content;
 			if (request.type.equals("indexing")) {
-				String filePath = content;
+				String filePath = content[0];
 				taskList = (ArrayList<String[]>) GoogleFileManager.splitFile(filePath, helperList.size());
 			}
 			else if (request.type.equals("searching")) {
 				// Assumption: keywords are split by ';'
-				String[] wordList = content.split(";");
+				String[] wordList = content;
+			//	System.out.println(content);
 				
 				if (helperList.size() == 1)
 					taskList.add(wordList);
@@ -219,6 +225,7 @@ public class GoogleServer extends Server {
 					int numPerHelper;
 					if (wordList.length % helperList.size() == 0) {
 						numPerHelper = wordList.length / helperList.size();
+				//		System.out.println("Here 1");
 					}
 					else {
 						int integer = wordList.length / helperList.size();
@@ -226,8 +233,9 @@ public class GoogleServer extends Server {
 						numPerHelper = decimal < 0.5 ? integer : integer + 1;
 					}
 					for (int i = 0, cnt = 0; i < helperList.size(); i ++) {
+				//		System.out.println("Here 2");
 						String[] task;
-						if (i != helperList.size() - 2) 
+						if (i != helperList.size() - 1) 
 							task = new String[numPerHelper];
 						else
 							task = new String[wordList.length - numPerHelper * (helperList.size() - 1)];
@@ -235,6 +243,9 @@ public class GoogleServer extends Server {
 						for(int j = 0; j < task.length; j ++) {
 							task[j] = wordList[cnt ++];
 						}
+					//	System.out.println("Here 3");
+					//	System.out.println(task.length);
+					//	System.out.println(task[0]);
 						taskList.add(task);
 					}
 				}

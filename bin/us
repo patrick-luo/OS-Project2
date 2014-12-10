@@ -1,13 +1,37 @@
-us!	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4	bible.txt:4
-using	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6	bible.txt:6
-us-ward	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3
-use	bible.txt:46	bible.txt:46	bible.txt:46	bible.txt:46	bible.txt:46	bible.txt:46	bible.txt:46	bible.txt:46	bible.txt:46
-used	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25	bible.txt:25
-usest	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-usurp	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-usury	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24	bible.txt:24
-usurer	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-uses	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-user	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3
-useth	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7	bible.txt:7
-us	bible.txt:1445	bible.txt:1445	bible.txt:1445	bible.txt:1445	bible.txt:1445	bible.txt:1445	bible.txt:1445	bible.txt:1445	bible.txt:1445
+usherette	dict.txt:1
+us!	bible.txt:4
+usurper	dict.txt:1
+usurious	dict.txt:1
+us-ward	bible.txt:3
+ushered	dict.txt:1
+usefully	dict.txt:1
+usages	dict.txt:1
+usurer	bible.txt:1	dict.txt:1
+users	dict.txt:1
+usual	dict.txt:1
+usury	bible.txt:24	dict.txt:1
+usurped	dict.txt:1
+used	bible.txt:25	dict.txt:1
+usage	dict.txt:1
+user	bible.txt:3	dict.txt:1
+usher	dict.txt:1
+uselessly	dict.txt:1
+usability	dict.txt:1
+usefulness	dict.txt:1
+ushering	dict.txt:1
+usable	dict.txt:1
+uselessness	dict.txt:1
+using	bible.txt:6	dict.txt:1
+usurping	dict.txt:1
+ushers	dict.txt:1
+usually	dict.txt:1
+useless	dict.txt:1
+useth	bible.txt:7
+us	bible.txt:1445	dict.txt:1
+useable	dict.txt:1
+useful	dict.txt:1
+usurpation	dict.txt:1
+use	bible.txt:46	dict.txt:1
+uses	bible.txt:1	dict.txt:1
+usurp	bible.txt:1	dict.txt:1
+usest	bible.txt:1

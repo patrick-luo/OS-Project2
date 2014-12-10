@@ -1,6 +1,65 @@
-equal	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21	bible.txt:21
-equally	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-equals	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-equipment	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3	bible.txt:3
-equality	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-equity	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10	bible.txt:10
+equates	dict.txt:1
+equilibrium	dict.txt:1
+equilateral	dict.txt:1
+equatorial	dict.txt:1
+equinoctial	dict.txt:1
+equalized	dict.txt:1
+equably	dict.txt:1
+equivocating	dict.txt:1
+equalling	dict.txt:1
+equalisation	dict.txt:1
+equestrian	dict.txt:1
+equalities	dict.txt:1
+equalising	dict.txt:1
+equals	bible.txt:1	dict.txt:1
+equalizers	dict.txt:1
+equine	dict.txt:1
+equitable	dict.txt:1
+equalizer	dict.txt:1
+equips	dict.txt:1
+equivalents	dict.txt:1
+equate	dict.txt:1
+equinox	dict.txt:1
+equable	dict.txt:1
+equations	dict.txt:1
+equipped	dict.txt:1
+equivocation	dict.txt:1
+equalize	dict.txt:1
+equating	dict.txt:1
+equanimity	dict.txt:1
+equivalence	dict.txt:1
+equipartition	dict.txt:1
+equitably	dict.txt:1
+equilibria	dict.txt:1
+equalise	dict.txt:1
+equalizing	dict.txt:1
+equities	dict.txt:1
+equivocal	dict.txt:1
+equinoxes	dict.txt:1
+equivalences	dict.txt:1
+equaliser	dict.txt:1
+equiangular	dict.txt:1
+equalization	dict.txt:1
+equality	bible.txt:2	dict.txt:1
+equip	dict.txt:1
+equipment	bible.txt:3	dict.txt:1
+equivalent	dict.txt:1
+equalised	dict.txt:1
+equation	dict.txt:1
+equestrianism	dict.txt:1
+equivocated	dict.txt:1
+equidistant	dict.txt:1
+equity	bible.txt:10	dict.txt:1
+equalisers	dict.txt:1
+equilibration	dict.txt:1
+equipments	dict.txt:1
+equal	bible.txt:21	dict.txt:1
+equilibrating	dict.txt:1
+equally	bible.txt:1	dict.txt:1
+equated	dict.txt:1
+equivocations	dict.txt:1
+equalled	dict.txt:1
+equivalently	dict.txt:1
+equator	dict.txt:1
+equerry	dict.txt:1
+equipping	dict.txt:1

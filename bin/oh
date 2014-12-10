@@ -1,3 +1,6 @@
-ohel	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1	bible.txt:1
-ohad	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2	bible.txt:2
-oh	bible.txt:38	bible.txt:38	bible.txt:38	bible.txt:38	bible.txt:38	bible.txt:38	bible.txt:38	bible.txt:38	bible.txt:38
+oh	bible.txt:38	dict.txt:1
+ohel	bible.txt:1
+ohm	dict.txt:1
+ohms	dict.txt:1
+ohad	bible.txt:2
+ohmic	dict.txt:1
